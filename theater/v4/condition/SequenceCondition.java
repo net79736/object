@@ -16,7 +16,7 @@ public class SequenceCondition implements DiscountCondition {
     }
 
     /**
-     * 상영 순번에 따른 할인 조건을 확인한다.
+     * ### 상영 순번에 따른 할인 조건을 확인한다.
      * @param screening 상영 정보
      * @return
      */

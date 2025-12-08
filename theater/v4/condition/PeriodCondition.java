@@ -23,13 +23,15 @@ public class PeriodCondition implements DiscountCondition {
     }
     
     /**
-     * 상영 시간에 따른 할인 조건을 확인한다.
+     * ### 상영 시간에 따른 할인 조건을 확인한다.
      * @param screening 상영 정보
      * @return
      */
     public boolean isSatisfiedBy(Screening screening) {
-        return screening.getStartTime().getDayOfWeek().equals(dayOfWeek) && // 상영 요일이 일치하고
-            startTime.compareTo(screening.getStartTime().toLocalTime()) <= 0 && // "상영 시작시간"이 시작시간보다 크거나 같고
-            endTime.compareTo(screening.getStartTime().toLocalTime()) >= 0; // "상영 시작시간"이 종료시간보다 작거나 같으면 true를 반환한다.
+        boolean screeningDayOfWeek = screening.getStartTime().getDayOfWeek().equals(dayOfWeek); // 상영 요일이 일치하고
+        boolean screeningStartTime = startTime.compareTo(screening.getStartTime().toLocalTime()) <= 0; // "상영 시작시간"이 시작시간보다 크거나 같고
+        boolean screeningEndTime = endTime.compareTo(screening.getStartTime().toLocalTime()) >= 0; // "상영 시작시간"이 종료시간보다 작거나 같으면 true를 반환한다.
+        
+        return screeningDayOfWeek && screeningStartTime && screeningEndTime;
     }
 }

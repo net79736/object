@@ -3,9 +3,9 @@ package v4;
 import java.time.LocalDateTime;
 
 public class Screening {
-    private Movie movie;
-    private int sequence;
-    private LocalDateTime whenScreened; // 상영시작시간
+    private Movie movie; // 영화
+    private int sequence; // 상영 순번
+    private LocalDateTime whenScreened; // 상영시작시간 ()
 
     public Screening(Movie movie, int sequence, LocalDateTime whenScreened) {
         this.movie = movie;
