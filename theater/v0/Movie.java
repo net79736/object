@@ -1,10 +1,11 @@
 package v0;
 
 import java.time.Duration;
-import java.util.Collections;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import v0.condition.DiscountCondition;
+import v0.condition.DiscountConditionType;
 
 public class Movie {
     private String title; // 영화 제목
@@ -19,32 +20,48 @@ public class Movie {
     public MovieType getMovieType() {
         return movieType;
     }
-    public void setMovieType (MovieType movieType) {
-        this.movieType = movieType;
+
+    public Money calculateAmountDiscountedFee() {
+        if (movieType != MovieType.AMOUNT_DISCOUNT) {
+            throw new IllegalArgumentException();
+        }
+        return fee.minus(discountAmount);
     }
-    public Money getFee() {
+
+    public Money calculatePercentDiscountedFee() {
+        if (movieType != MovieType.PERCENT_DISCOUNT) {
+            throw new IllegalArgumentException();
+        }
+        return fee.minus(fee.times(discountPercent));
+    }   
+
+    public Money calculateNoneDiscountedFee() {
+        if (movieType != MovieType.NONE_DISCOUNT) {
+            throw new IllegalArgumentException();
+        }
         return fee;
     }
-    public void setFee (Money fee) {
-        this.fee = fee;
-    }
-    public List<DiscountCondition> getDiscountConditions() {
-        return Collections.unmodifiableList(discountConditions);
-    }
-    public void setDiscountConditions(
-            List<DiscountCondition> discountConditions) {
-        this.discountConditions = discountConditions;
-    }
-    public Money getDiscountAmount() {
-        return discountAmount;
-    }
-    public void setDiscountAmount (Money discountAmount) {
-        this.discountAmount = discountAmount;
-    }
-    public double getDiscountPercent () {
-        return discountPercent;
-    }
-    public void setDiscountPercent (double discountPercent) {
-        this.discountPercent = discountPercent;
+
+    /**
+     * 할인 조건을 확인한다.
+     * @param whenScreened 상영 시간 (yyyy-MM-dd HH:mm)
+     * @param sequence 상영 순번 
+     * @return 할인 조건을 만족하면 true, 그렇지 않으면 false
+     */
+    public boolean isDiscountable(LocalDateTime whenScreened, int sequence) {
+        for (DiscountCondition condition : discountConditions) {
+            if (condition.getType() == DiscountConditionType.PERIOD) {
+                // 기간 조건을 확인한다.
+                if (condition.isDiscountable(whenScreened.getDayOfWeek(), whenScreened.toLocalTime())) {
+                    return true;
+                }
+            } else {
+                // 순번 조건을 확인한다.
+                if (condition.isDiscountable(sequence)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 }
