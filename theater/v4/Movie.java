@@ -33,6 +33,8 @@ public class Movie {
      * @return
      */
     public Money calculateMovieFee(Screening screening) {
-        return fee.minus(discountPolicy.calculateDiscountAmount(screening)); // 할인 금액을 차감한 영화 요금을 반환한다.
+        return fee.minus(
+            discountPolicy.calculateDiscountAmount(screening)
+        ); // 할인 금액을 차감한 영화 요금을 반환한다.
     }
 }
