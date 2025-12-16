@@ -1,12 +1,13 @@
 package v0;
 
+import common.Money;
 
 public class Reservation {
-    private Customer customer;
-    private Screening screening;
-    private Money money;
-    private int audienceCount;
-
+    private Customer customer; // 관객
+    private Screening screening; // 상영
+    private Money money; // 요금
+    private int audienceCount; // 관객수
+    
     public Reservation(Customer customer, Screening screening, Money money, int audienceCount) {
         this.customer = customer;
         this.screening = screening;
