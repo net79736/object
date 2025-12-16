@@ -14,4 +14,19 @@ public class Audience {
     public boolean hasInvitation() {
         return bag.getInvitation() != null;
     }
+
+    // public Long setTicket(Ticket ticket) {
+    //     if (bag.hasInvitation()) {
+    //         bag.setTicket(ticket);
+    //         return 0L;
+    //     } else {
+    //         bag.setTicket(ticket);
+    //         bag.minusAmount(ticket.getFee());
+    //         return ticket.getFee();
+    //     }
+    // }
+
+    public Long setTicket(Ticket ticket) {
+        return bag.setTicket(ticket);
+    }
 }
