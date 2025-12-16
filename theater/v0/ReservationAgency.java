@@ -2,6 +2,12 @@ package v0;
 
 import common.Money;
 
+/**
+ * ReservationAgency 가 모든 데이터 객체에 의존
+ *   - DiscountCondition의 데이터가 변경 → ReservationAgency도 함께 수정
+ *   - Screening의 데이터가 변경 → ReservationAgency도 함께 수정
+ *   - 새로운 할인 정책을 추가 → switch 구문에 새로운 case 절을 추가
+ */
 public class ReservationAgency {
     public Reservation reserve(Screening screening, Customer customer, int audienceCount) {
         Movie movie = screening.getMovie();
