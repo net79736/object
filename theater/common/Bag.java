@@ -35,7 +35,7 @@ public class Bag {
         amount.minus(Money.wons(fee));
     }
 
-    public Long setTicket(Ticket ticket) {
+    public Long hold(Ticket ticket) {
         if (hasInvitation()) {
             this.ticket = ticket;
             return 0L;
