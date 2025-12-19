@@ -1,4 +1,4 @@
-package test.claude6_3;
+package test.claude6_3.enums;
 
 public enum CouponType {
     FIXED, // 고정 금액 할인

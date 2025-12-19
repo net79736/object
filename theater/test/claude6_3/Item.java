@@ -19,6 +19,11 @@ public class Item {
         return quantity;
     }
 
+    /**
+     * 총 금액 계산
+     * @param items 아이템 리스트
+     * @return 총 금액
+     */
     public static int calculatePriceTotal(List<Item> items) {
         return items.stream().mapToInt(item -> item.getPrice() * item.getQuantity()).sum();
     }

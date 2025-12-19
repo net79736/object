@@ -1,4 +1,4 @@
-package test.claude6_3;
+package test.claude6_3.enums;
 
 public enum MembershipLevel {
     GOLD,

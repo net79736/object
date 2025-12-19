@@ -11,19 +11,17 @@ public class ShoppingCart {
     private List<Item> items;
     private User user;
     
+    /**
+     * 장바구니의 최종 금액을 계산합니다.
+     * 묻지 말고 시켜라 원칙: User가 자신의 할인을 계산합니다.
+     * 
+     * @return 할인 적용 후 최종 금액
+     */
     public int calculateTotal() {
         // 총 금액 계산
         int total = Item.calculatePriceTotal(items);
         
-        // 사용자 등급별 할인
-        total = user.calculateDiscountedTotal(total);
-        
-        // 첫 구매 할인
-        total = user.calculateFirstPurchaseDiscountedTotal(total);
-        
-        // 쿠폰 적용
-        total = user.applyCouponDiscount(total);
-        
-        return total;
+        // 사용자의 모든 할인 정책을 적용하여 최종 금액 계산
+        return user.calculateFinalTotal(total);
     }
 }

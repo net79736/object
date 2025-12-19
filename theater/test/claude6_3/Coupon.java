@@ -1,5 +1,7 @@
 package test.claude6_3;
 
+import test.claude6_3.enums.CouponType;
+
 public class Coupon {
     private CouponType type; // 쿠폰 타입
     private int amount; // 할인 금액
@@ -27,10 +29,10 @@ public class Coupon {
      */
     public int applyDiscountAmount(int total) {
         if (getType() == CouponType.FIXED) {
-            total -= getAmount();
+            return Math.max(0, total - getAmount()); // 최소 0원 보장
         } else {
-            total = (int)(total * (1 - getDiscountRate()));
+            // discountRate는 백분율 (예: 10 = 10%)
+            return (int)(total * (1 - getDiscountRate() / 100.0));
         }
-        return total;
     }
 }
