@@ -10,6 +10,17 @@ public class Bag {
         this.amount = amount;
         this.ticket = ticket;
     }
+    public void setInvitation(Invitation invitation) {
+        this.invitation = invitation;
+    }
+
+    public void setAmount(Money amount) {
+        this.amount = amount;
+    }
+
+    public void setTicket(Ticket ticket) {
+        this.ticket = ticket;
+    }
 
     public Money getAmount() {
         return amount;
