@@ -14,4 +14,9 @@ public enum Grade {
             case BRONZE -> 0;
         };
     }
+
+    // Grade.java에 추가
+    public boolean isVip() {
+        return this == VIP;
+    }
 }
