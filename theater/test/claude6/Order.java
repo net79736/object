@@ -45,4 +45,8 @@ public class Order {
             product.decreaseStock(item.getQuantity()); // 재고 감소
         }
     }
+
+    public void processPayment() {
+        customer.pay(getTotalAmount());
+    }
 }

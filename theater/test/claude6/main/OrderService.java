@@ -11,6 +11,6 @@ public class OrderService {
         order.decreaseStock();
         
         // 결제 처리 (Customer가 자신의 결제수단을 선택하고 결제 처리)
-        order.getCustomer().pay(order.getTotalAmount());
+        order.processPayment();
     }
 }
