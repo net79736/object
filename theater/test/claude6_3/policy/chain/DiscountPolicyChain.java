@@ -1,4 +1,4 @@
-package test.claude6_3.policy;
+package test.claude6_3.policy.chain;
 
 import java.util.ArrayList;
 import java.util.List;

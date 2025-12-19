@@ -2,9 +2,9 @@ package test.claude6_3;
 
 import test.claude6_3.enums.MembershipLevel;
 import test.claude6_3.policy.CouponDiscountPolicy;
-import test.claude6_3.policy.DiscountPolicyChain;
 import test.claude6_3.policy.FirstPurchaseDiscountPolicy;
 import test.claude6_3.policy.MembershipDiscountPolicy;
+import test.claude6_3.policy.chain.DiscountPolicyChain;
 
 public class User {
     private MembershipLevel membershipLevel; // 사용자 등급
@@ -41,23 +41,5 @@ public class User {
             .addPolicy(new CouponDiscountPolicy(coupon));
         
         return chain.applyAll(total);
-    }
-
-    // 하위 호환성을 위한 메서드들 (기존 코드와의 호환성 유지)
-    /**
-     * 사용자 등급별 할인 계산
-     * @param total
-     * @return 할인 후 금액
-     */
-    public int calculateDiscountedTotal(int total) {
-        return new MembershipDiscountPolicy(membershipLevel).applyDiscount(total);
-    }
-
-    public int calculateFirstPurchaseDiscountedTotal(int total) {
-        return new FirstPurchaseDiscountPolicy(isFirstPurchase).applyDiscount(total);
-    }
-
-    public int applyCouponDiscount(int total) {
-        return new CouponDiscountPolicy(coupon).applyDiscount(total);
     }
 }
