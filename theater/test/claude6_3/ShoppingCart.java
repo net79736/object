@@ -1,0 +1,45 @@
+package test.claude6_3;
+
+import java.util.List;
+
+/**
+ * 이 코드의 문제점을 3가지 이상 나열하시오
+ * "묻지말고 시켜라" 원칙을 적용하여 리팩토링하시오
+ * 새로운 할인 정책 추가가 쉬운 구조로 만드시오
+ */
+public class ShoppingCart {
+    private List<Item> items;
+    private User user;
+    
+    public int calculateTotal() {
+        int total = 0;
+        // 총 금액 계산
+        for (Item item : items) {
+            total += item.getPrice() * item.getQuantity();
+        }
+        
+        // 사용자 등급별 할인
+        if (user.getMembershipLevel() == MembershipLevel.GOLD) {
+            total = (int)(total * 0.9);  // 10% 할인
+        } else if (user.getMembershipLevel() == MembershipLevel.SILVER) {
+            total = (int)(total * 0.95);  // 5% 할인
+        }
+        
+        // 첫 구매 할인
+        if (user.isFirstPurchase()) {
+            total = (int)(total * 0.9);  // 10% 추가 할인
+        }
+        
+        // 쿠폰 적용
+        if (user.hasCoupon()) {
+            Coupon coupon = user.getCoupon();
+            if (coupon.getType() == CouponType.FIXED) {
+                total -= coupon.getAmount();
+            } else {
+                total = (int)(total * (1 - coupon.getDiscountRate()));
+            }
+        }
+        
+        return total;
+    }
+}
