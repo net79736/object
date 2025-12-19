@@ -1,4 +1,4 @@
-package test.claude6;
+package test.claude6_1;
 
 public enum Grade {
     VIP,

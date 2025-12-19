@@ -1,4 +1,4 @@
-package test.claude6;
+package test.claude6_1;
 
 import java.util.List;
 

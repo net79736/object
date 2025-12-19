@@ -1,6 +1,6 @@
-package test.claude6.policy;
+package test.claude6_1.policy;
 
-import test.claude6.Customer;
+import test.claude6_1.Customer;
 
 /**
  * VIP 고객 배송비 정책

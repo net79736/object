@@ -1,6 +1,6 @@
-package test.claude6.policy;
+package test.claude6_1.policy;
 
-import test.claude6.Customer;
+import test.claude6_1.Customer;
 
 /**
  * 배송비 계산 정책 인터페이스

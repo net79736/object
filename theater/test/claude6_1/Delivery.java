@@ -1,6 +1,6 @@
-package test.claude6;
+package test.claude6_1;
 
-import test.claude6.policy.DeliveryFeePolicy;
+import test.claude6_1.policy.DeliveryFeePolicy;
 
 public class Delivery {
     private int fee; // 기본 배송비

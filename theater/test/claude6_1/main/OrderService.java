@@ -1,6 +1,6 @@
-package test.claude6.main;
+package test.claude6_1.main;
 
-import test.claude6.Order;
+import test.claude6_1.Order;
 
 public class OrderService {
     public void processOrder(Order order) {     
