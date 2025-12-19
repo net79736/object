@@ -1,9 +1,9 @@
 package test.claude6_3;
 
 public class Coupon {
-    private CouponType type;
-    private int amount;
-    private int discountRate;
+    private CouponType type; // 쿠폰 타입
+    private int amount; // 할인 금액
+    private int discountRate; // 할인 비율
 
     public CouponType getType() {
         return type;
@@ -15,5 +15,22 @@ public class Coupon {
 
     public int getAmount() {
         return amount;
+    }
+
+    /**
+     * 쿠폰 할인 적용
+     * 고정 금액 할인: 총 금액에서 할인 금액 빼기
+     * 비율 할인: 총 금액에서 할인 비율 곱하기
+     * 
+     * @param total 총 금액
+     * @return 할인 후 금액
+     */
+    public int applyDiscountAmount(int total) {
+        if (getType() == CouponType.FIXED) {
+            total -= getAmount();
+        } else {
+            total = (int)(total * (1 - getDiscountRate()));
+        }
+        return total;
     }
 }

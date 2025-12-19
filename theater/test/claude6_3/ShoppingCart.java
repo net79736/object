@@ -12,33 +12,17 @@ public class ShoppingCart {
     private User user;
     
     public int calculateTotal() {
-        int total = 0;
         // 총 금액 계산
-        for (Item item : items) {
-            total += item.getPrice() * item.getQuantity();
-        }
+        int total = Item.calculatePriceTotal(items);
         
         // 사용자 등급별 할인
-        if (user.getMembershipLevel() == MembershipLevel.GOLD) {
-            total = (int)(total * 0.9);  // 10% 할인
-        } else if (user.getMembershipLevel() == MembershipLevel.SILVER) {
-            total = (int)(total * 0.95);  // 5% 할인
-        }
+        total = user.calculateDiscountedTotal(total);
         
         // 첫 구매 할인
-        if (user.isFirstPurchase()) {
-            total = (int)(total * 0.9);  // 10% 추가 할인
-        }
+        total = user.calculateFirstPurchaseDiscountedTotal(total);
         
         // 쿠폰 적용
-        if (user.hasCoupon()) {
-            Coupon coupon = user.getCoupon();
-            if (coupon.getType() == CouponType.FIXED) {
-                total -= coupon.getAmount();
-            } else {
-                total = (int)(total * (1 - coupon.getDiscountRate()));
-            }
-        }
+        total = user.applyCouponDiscount(total);
         
         return total;
     }

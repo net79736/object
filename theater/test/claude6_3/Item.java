@@ -1,5 +1,7 @@
 package test.claude6_3;
 
+import java.util.List;
+
 public class Item {
     private int price;
     private int quantity;
@@ -15,5 +17,9 @@ public class Item {
 
     public int getQuantity() {
         return quantity;
+    }
+
+    public static int calculatePriceTotal(List<Item> items) {
+        return items.stream().mapToInt(item -> item.getPrice() * item.getQuantity()).sum();
     }
 }
