@@ -21,77 +21,34 @@ public class PaymentService {
 
     /**
      * 주문에 대한 결제를 처리합니다.
-     * 포인트 부분 결제를 지원합니다.
      * 
-     * 포인트를 사용하는 경우:
-     * 1. 포인트로 일부 금액 결제
-     * 2. 나머지 금액은 다른 결제 수단으로 결제
-     * 
-     * 포인트를 사용하지 않는 경우:
-     * - 지정된 결제 수단으로 전체 금액 결제
+     * Order가 생성한 PaymentPlan을 실행합니다.
+     * "묻지 말고 시켜라" 원칙: Order가 자신의 결제 계획을 생성하고,
+     * PaymentService는 단순히 계획을 실행합니다.
      * 
      * @param order 결제할 주문
      * @param totalAmount 결제할 총 금액
      * @throws RuntimeException 결제 실패 시 (포인트 부족, 결제 수단 오류 등)
      */
     public void processPayment(Order order, int totalAmount) {
-        if (order.hasPointPayment()) {
-            // 포인트 부분 결제
-            processMixedPayment(order, totalAmount);
-        } else {
-            // 단일 결제 수단으로 전체 금액 결제
-            processSinglePayment(order, totalAmount);
-        }
+        PaymentPlan paymentPlan = order.createPaymentPlan(totalAmount);
+        executePaymentPlan(order.getUser(), paymentPlan);
     }
 
     /**
-     * 포인트와 다른 결제 수단을 함께 사용하는 복합 결제를 처리합니다.
+     * 결제 계획을 실행합니다.
      * 
-     * @param order 결제할 주문
-     * @param totalAmount 결제할 총 금액
+     * PaymentPlan에 포함된 각 PaymentItem을 순차적으로 처리합니다.
+     * 
+     * @param user 결제를 수행할 사용자
+     * @param paymentPlan 실행할 결제 계획
      * @throws RuntimeException 결제 실패 시 (포인트 부족, 결제 수단 오류 등)
      */
-    private void processMixedPayment(Order order, int totalAmount) {
-        User user = order.getUser();
-        int pointAmount = order.getPointAmount();
-        int remainingAmount = totalAmount - pointAmount;
-
-        // 포인트 사용 금액이 총 금액보다 큰 경우 검증
-        if (pointAmount > totalAmount) {
-            throw new RuntimeException("포인트 사용 금액이 총 금액보다 큽니다. 포인트: " + pointAmount + ", 총액: " + totalAmount);
+    private void executePaymentPlan(User user, PaymentPlan paymentPlan) {
+        for (PaymentPlan.PaymentItem item : paymentPlan.getPaymentItems()) {
+            PaymentHandler handler = findHandler(item.getPaymentType());
+            handler.processPayment(user, item.getAmount());
         }
-
-        // 1. 포인트로 일부 금액 결제
-        if (pointAmount > 0) {
-            PaymentHandler pointHandler = findHandler(PaymentType.POINT);
-            pointHandler.processPayment(user, pointAmount);
-        }
-
-        // 2. 나머지 금액을 다른 결제 수단으로 결제
-        if (remainingAmount > 0) {
-            PaymentType paymentType = order.getPaymentType();
-            // 포인트 결제 수단이면 안됨
-            if (paymentType == PaymentType.POINT) {
-                throw new RuntimeException("포인트 부분 결제 시 나머지 금액은 다른 결제 수단을 사용해야 합니다.");
-            }
-            PaymentHandler handler = findHandler(paymentType);
-            handler.processPayment(user, remainingAmount);
-        }
-    }
-
-    /**
-     * 단일 결제 수단으로 결제를 처리합니다.
-     * 
-     * @param order 결제할 주문
-     * @param totalAmount 결제할 총 금액
-     * @throws RuntimeException 결제 실패 시 (포인트 부족, 결제 수단 오류 등)
-     */
-    private void processSinglePayment(Order order, int totalAmount) {
-        PaymentType paymentType = order.getPaymentType();
-        User user = order.getUser();
-
-        PaymentHandler handler = findHandler(paymentType);
-        handler.processPayment(user, totalAmount);
     }
 
     /**
