@@ -1,19 +1,22 @@
 package apec.test6;
 
 import java.time.LocalDateTime;
+import apec.test6.payment.intf.PaymentInfo;
 import common.Money;
 
 public class Order {
     private Customer customer;
     private Money amount;
     private PaymentType paymentType;
+    private PaymentInfo paymentInfo;  // 결제 수단별 정보를 담는 객체
     private String status;
     private LocalDateTime paymentDate;
 
-    public Order(Customer customer, Money amount, PaymentType paymentType) {
+    public Order(Customer customer, Money amount, PaymentType paymentType, PaymentInfo paymentInfo) {
         this.customer = customer;
         this.amount = amount;
         this.paymentType = paymentType;
+        this.paymentInfo = paymentInfo;
     }
 
     public Customer getCustomer() {
@@ -26,6 +29,10 @@ public class Order {
 
     public PaymentType getPaymentType() {
         return paymentType;
+    }
+
+    public PaymentInfo getPaymentInfo() {
+        return paymentInfo;
     }
 
     public String getStatus() {
