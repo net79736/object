@@ -30,4 +30,8 @@ public class Product {
         }
         stock.decrease(quantity);
     }
+
+    public boolean isOutOfStock(int quantity) {
+        return checkOutOfStock(quantity);
+    }
 }

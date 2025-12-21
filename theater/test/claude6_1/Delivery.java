@@ -1,5 +1,7 @@
 package test.claude6_1;
 
+import apec.test1.Customer;
+import common.Money;
 import test.claude6_1.policy.DeliveryFeePolicy;
 
 public class Delivery {
@@ -11,8 +13,8 @@ public class Delivery {
         this.deliveryFeePolicy = deliveryFeePolicy;
     }
 
-    public int getFee() {
-        return fee;
+    public Money getFee() {
+        return Money.wons(fee);
     }
 
     public void setFee(int fee) {
@@ -25,5 +27,13 @@ public class Delivery {
 
     public int calculateOrderFee(Order order) {
         return deliveryFeePolicy.calculateFee(order.getCustomer(), fee);
+    }
+
+    public void calculateDeliveryFee(Customer customer) {
+        if (customer.isVipCustomer()) {
+            setFee(0);
+        } else {
+            // TODO: 배송비 계산 로직 구현
+        }
     }
 }
