@@ -26,4 +26,8 @@ public class Order {
     public PaymentType getPaymentType() {
         return paymentType;
     }
+
+    public int getFinalTotalAmount(int totalAmount) {
+        return user.calculateFinalTotal(totalAmount);
+    }
 }
