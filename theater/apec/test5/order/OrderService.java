@@ -1,5 +1,6 @@
 package apec.test5.order;
 
+import static apec.test5.ReportGenerator.buildPaymentInfo;
 import apec.test5.notification.NotificationService;
 import apec.test5.payment.main.PaymentService;
 
@@ -42,11 +43,12 @@ public class OrderService {
         int finalTotalAmount = order.getFinalTotalAmount(totalAmount);
 
         // 4. 결제 수단에 따라 결제 처리
-        // int finalAmount = paymentService.calculateFinalAmount(finalTotalAmount, order.getPaymentType());
+        // 포인트 부분 결제를 지원합니다 (포인트 + 다른 결제 수단)
         paymentService.processPayment(order, finalTotalAmount);
 
         // 5. 주문 완료 알림 전송
-        String message = String.format("주문이 완료되었습니다. 최종 결제 금액: %d원", finalTotalAmount);
+        String paymentInfo = buildPaymentInfo(order, finalTotalAmount);
+        String message = String.format("주문이 완료되었습니다. %s", paymentInfo);
         notificationService.sendNotification(order.getUser(), message);
     }
 
