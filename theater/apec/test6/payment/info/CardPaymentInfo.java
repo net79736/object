@@ -1,5 +1,6 @@
 package apec.test6.payment.info;
 
+import static apec.test6.PaymentTypeEnum.CARD;
 import apec.test6.payment.intf.PaymentInfo;
 
 /**
@@ -31,7 +32,7 @@ public class CardPaymentInfo implements PaymentInfo {
 
     @Override
     public String getPaymentMethod() {
-        return "CARD";
+        return CARD.name();
     }
 }
 

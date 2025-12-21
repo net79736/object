@@ -1,6 +1,6 @@
 package apec.test6;
 
-import apec.test6.payment.PaymentGatewayFactory;
+import apec.test6.payment.factory.PaymentGatewayFactory;
 import apec.test6.payment.intf.PaymentGateway;
 
 /**
@@ -31,10 +31,10 @@ public class PaymentProcessor {
      * @throws IllegalArgumentException 지원하지 않는 결제 수단인 경우
      */
     public void processPayment(Order order) {
-        PaymentType paymentType = order.getPaymentType();
+        PaymentTypeEnum paymentTypeEnum = order.getPaymentType();
         
         // 변하는 부분: 결제 수단 선택 (Factory에 위임)
-        PaymentGateway paymentGateway = PaymentGatewayFactory.create(paymentType);
+        PaymentGateway paymentGateway = PaymentGatewayFactory.create(paymentTypeEnum);
         
         // 변하지 않는 부분: 결제 처리 행위 자체
         paymentGateway.pay(order, order.getPaymentInfo(), order.getAmount());

@@ -1,8 +1,9 @@
-package apec.test6.payment;
+package apec.test6.payment.gateway;
 
 import apec.test6.Order;
 import apec.test6.payment.info.CardPaymentInfo;
 import apec.test6.payment.intf.PaymentGateway;
+import apec.test6.payment.intf.PaymentInfo;
 import common.Money;
 
 /**
@@ -14,9 +15,9 @@ import common.Money;
  */
 public class CardPaymentGateway implements PaymentGateway {
     @Override
-    public void pay(Order order, apec.test6.payment.intf.PaymentInfo paymentInfo, Money amount) {
+    public void pay(Order order, PaymentInfo paymentInfo, Money amount) {
         // PaymentInfo를 CardPaymentInfo로 캐스팅하여 카드 정보 추출
-        CardPaymentInfo cardInfo = (CardPaymentInfo) paymentInfo;
+        CardPaymentInfo cardInfo = (CardPaymentInfo) paymentInfo; // 캐스팅 필요
         
         String cardNumber = cardInfo.getCardNumber();
         String cvv = cardInfo.getCvv();

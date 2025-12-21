@@ -1,5 +1,6 @@
 package apec.test6.payment.info;
 
+import static apec.test6.PaymentTypeEnum.BANK_TRANSFER;
 import apec.test6.payment.intf.PaymentInfo;
 
 /**
@@ -30,7 +31,7 @@ public class AccountPaymentInfo implements PaymentInfo {
 
     @Override
     public String getPaymentMethod() {
-        return "BANK_TRANSFER";
+        return BANK_TRANSFER.name();
     }
 }
 

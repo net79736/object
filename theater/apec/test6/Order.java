@@ -7,12 +7,12 @@ import common.Money;
 public class Order {
     private Customer customer;
     private Money amount;
-    private PaymentType paymentType;
+    private PaymentTypeEnum paymentType;
     private PaymentInfo paymentInfo;  // 결제 수단별 정보를 담는 객체
     private String status;
     private LocalDateTime paymentDate;
 
-    public Order(Customer customer, Money amount, PaymentType paymentType, PaymentInfo paymentInfo) {
+    public Order(Customer customer, Money amount, PaymentTypeEnum paymentType, PaymentInfo paymentInfo) {
         this.customer = customer;
         this.amount = amount;
         this.paymentType = paymentType;
@@ -27,7 +27,7 @@ public class Order {
         return amount;
     }
 
-    public PaymentType getPaymentType() {
+    public PaymentTypeEnum getPaymentType() {
         return paymentType;
     }
 

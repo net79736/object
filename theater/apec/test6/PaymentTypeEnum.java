@@ -4,7 +4,7 @@ package apec.test6;
  * 결제 수단 타입을 나타내는 enum
  * 새로운 결제 수단 추가 시 여기에만 추가하면 됨 (OCP 준수)
  */
-public enum PaymentType {
+public enum PaymentTypeEnum {
     CARD("카드"),
     BANK_TRANSFER("계좌이체"),
     PAYPAL("PayPal"),
@@ -12,7 +12,7 @@ public enum PaymentType {
 
     private final String description;
 
-    PaymentType(String description) {
+    PaymentTypeEnum(String description) {
         this.description = description;
     }
 

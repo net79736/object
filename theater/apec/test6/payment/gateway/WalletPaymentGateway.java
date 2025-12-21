@@ -1,8 +1,9 @@
-package apec.test6.payment;
+package apec.test6.payment.gateway;
 
 import apec.test6.Order;
 import apec.test6.payment.info.WalletPaymentInfo;
 import apec.test6.payment.intf.PaymentGateway;
+import apec.test6.payment.intf.PaymentInfo;
 import common.Money;
 
 /**
@@ -12,7 +13,7 @@ import common.Money;
  */
 public class WalletPaymentGateway implements PaymentGateway {
     @Override
-    public void pay(Order order, apec.test6.payment.intf.PaymentInfo paymentInfo, Money amount) {
+    public void pay(Order order, PaymentInfo paymentInfo, Money amount) {
         WalletPaymentInfo walletInfo = (WalletPaymentInfo) paymentInfo;
         
         String walletAddress = walletInfo.getWalletAddress();

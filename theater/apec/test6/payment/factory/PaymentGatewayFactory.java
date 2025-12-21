@@ -1,6 +1,10 @@
-package apec.test6.payment;
+package apec.test6.payment.factory;
 
-import apec.test6.PaymentType;
+import apec.test6.PaymentTypeEnum;
+import apec.test6.payment.gateway.AccountPaymentGateway;
+import apec.test6.payment.gateway.CardPaymentGateway;
+import apec.test6.payment.gateway.PaypalPaymentGateway;
+import apec.test6.payment.gateway.WalletPaymentGateway;
 import apec.test6.payment.intf.PaymentGateway;
 
 /**
@@ -16,7 +20,7 @@ public class PaymentGatewayFactory {
      * @return 해당 결제 수단의 PaymentGateway 구현체
      * @throws IllegalArgumentException 지원하지 않는 결제 수단인 경우
      */
-    public static PaymentGateway create(PaymentType paymentType) {
+    public static PaymentGateway create(PaymentTypeEnum paymentType) {
         if (paymentType == null) {
             throw new IllegalArgumentException("결제 수단은 null일 수 없습니다.");
         }

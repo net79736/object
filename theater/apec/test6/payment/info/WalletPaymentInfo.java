@@ -1,5 +1,6 @@
 package apec.test6.payment.info;
 
+import static apec.test6.PaymentTypeEnum.WALLET;
 import apec.test6.payment.intf.PaymentInfo;
 
 /**
@@ -18,7 +19,7 @@ public class WalletPaymentInfo implements PaymentInfo {
 
     @Override
     public String getPaymentMethod() {
-        return "WALLET";
+        return WALLET.name();
     }
 }
 
