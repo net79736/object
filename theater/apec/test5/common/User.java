@@ -2,6 +2,7 @@ package apec.test5.common;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import apec.test5.coupon.Coupon;
 import apec.test5.discount.CouponDiscountPolicy;
 import apec.test5.discount.GradeDiscountPolicy;
@@ -17,13 +18,18 @@ import apec.test5.point.Point;
  * "묻지 말고 시켜라" 원칙에 따라 사용자가 자신의 알림을 전송합니다.
  */
 public class User {
-    private Point point;
     private String email;
     private String phone;
     private String deviceToken;
+    // 멤버십 등급
     private MembershipLevel membershipLevel;
+    // 포인트
+    private Point point;
+    // 쿠폰
     private Coupon coupon;
+    // 알림 설정
     private NotificationSettings notificationSettings;
+    // 알림 전송 객체
     private List<NotificationSender> notificationSenders;
 
     public User(Point point,
@@ -49,18 +55,6 @@ public class User {
         return point;
     }
 
-    public void increasePoint(int point) {
-        this.point.increase(point);
-    }
-
-    public void decreasePoint(int point) {
-        this.point.decrease(point);
-    }
-
-    public void checkMaxPoint(int point) {
-        this.point.checkMaxPoint(point);
-    }
-
     public String getEmail() {
         return email;
     }
@@ -81,12 +75,40 @@ public class User {
         return coupon;
     }
 
-    public boolean hasCoupon() {
-        return coupon != null;
-    }
-
     public NotificationSettings getNotificationSettings() {
         return notificationSettings;
+    }
+
+    /**
+     * 포인트를 증가시킵니다.
+     * @param point 증가시킬 포인트
+     */
+    public void increasePoint(int point) {
+        this.point.increase(point);
+    }
+
+    /**
+     * 포인트를 감소시킵니다.
+     * @param point 감소시킬 포인트
+     */
+    public void decreasePoint(int point) {
+        this.point.decrease(point);
+    }
+
+    /**
+     * 최대 포인트 충전 방지에 대한 에러 처리
+     * @param point 최대 포인트 충전 방지에 대한 에러 처리
+     */
+    public void checkMaxPoint(int point) {
+        this.point.checkMaxPoint(point);
+    }
+
+    /**
+     * 쿠폰이 있는지 확인합니다.
+     * @return 쿠폰이 있는지 여부
+     */
+    public boolean hasCoupon() {
+        return coupon != null;
     }
 
     /**
@@ -140,5 +162,24 @@ public class User {
         notificationSenders.stream()
                 .filter(sender -> sender.isEnabled(notificationSettings))
                 .forEach(sender -> sender.send(this, message));
+    }
+
+    /**
+     * 사용자의 포인트 잔액을 조회합니다.
+     * @return 포인트 잔액
+     */
+    public int getPointBalance() {
+        return point.getPoint();
+    }
+
+    /**
+     * 포인트 잔액 검증
+     * @param point 검증할 포인트
+     * @throws RuntimeException 포인트 잔액이 부족할 경우
+     */
+    public void checkPointBalance(int point) {
+        if (point > getPointBalance()) {
+            throw new RuntimeException("포인트 잔액이 부족합니다. 포인트: " + point + ", 포인트 잔액: " + getPointBalance());
+        }
     }
 }

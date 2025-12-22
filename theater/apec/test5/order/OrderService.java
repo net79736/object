@@ -1,8 +1,9 @@
 package apec.test5.order;
 
-import static apec.test5.ReportGenerator.buildPaymentInfo;
+import static apec.test5.report.ReportGenerator.buildPaymentInfo;
+
+import apec.test5.main.PaymentService;
 import apec.test5.notification.NotificationService;
-import apec.test5.payment.main.PaymentService;
 
 /**
  * 주문 처리를 담당하는 서비스 클래스
@@ -49,7 +50,7 @@ public class OrderService {
         // 5. 주문 완료 알림 전송
         String paymentInfo = buildPaymentInfo(order, finalTotalAmount);
         String message = String.format("주문이 완료되었습니다. %s", paymentInfo);
-        notificationService.sendNotification(order.getUser(), message);
+        order.sendOrderCompletedNotification(message);
     }
 
     /**

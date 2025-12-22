@@ -1,4 +1,4 @@
-package apec.test5;
+package apec.test5.report;
 
 import apec.test5.order.Order;
 

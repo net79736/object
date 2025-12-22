@@ -1,8 +1,8 @@
 package apec.test5.payment;
 
 import apec.test5.common.User;
+import apec.test5.main.PaymentType;
 import apec.test5.payment.intf.PaymentHandler;
-import apec.test5.payment.main.PaymentType;
 
 /**
  * 신용카드 결제를 처리하는 핸들러

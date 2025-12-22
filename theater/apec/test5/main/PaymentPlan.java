@@ -1,4 +1,4 @@
-package apec.test5.payment.main;
+package apec.test5.main;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -41,9 +41,11 @@ public class PaymentPlan {
     public static PaymentPlan mixed(int pointAmount, PaymentType remainingPaymentType, int remainingAmount) {
         List<PaymentItem> items = new ArrayList<>();
         if (pointAmount > 0) {
+            // 포인트 결제 객체 추가
             items.add(new PaymentItem(PaymentType.POINT, pointAmount));
         }
         if (remainingAmount > 0) {
+            // 나머지 금액 결제 객체 추가
             items.add(new PaymentItem(remainingPaymentType, remainingAmount));
         }
         return new PaymentPlan(items);

@@ -1,6 +1,7 @@
-package apec.test5.payment.main;
+package apec.test5.main;
 
 import java.util.List;
+
 import apec.test5.common.User;
 import apec.test5.order.Order;
 import apec.test5.payment.intf.PaymentHandler;
@@ -45,6 +46,7 @@ public class PaymentService {
      * @throws RuntimeException 결제 실패 시 (포인트 부족, 결제 수단 오류 등)
      */
     private void executePaymentPlan(User user, PaymentPlan paymentPlan) {
+        // 결제 계획에 포함된 각 결제 항목을 순차적으로 처리합니다. (각 결제 항목은 하나의 결제 수단을 나타냄. [포인트, 카드, 계좌이체 등])
         for (PaymentPlan.PaymentItem item : paymentPlan.getPaymentItems()) {
             PaymentHandler handler = findHandler(item.getPaymentType());
             handler.processPayment(user, item.getAmount());
