@@ -1,13 +1,14 @@
 package apec.test1;
 
 import java.util.List;
+
 import common.Money;
 
 public class Customer {
     private Long id;
     private String name;
-    private Grade grade;
-    private List<PaymentMethod> paymentMethods;    // 결제 수단 리스트
+    private Grade grade; // 고객 등급
+    private List<PaymentMethod> paymentMethods;    // 결제 수단 리스트(카드, 계좌이체, 휴대폰 결제 등)
 
     public Customer(Long id, String name, Grade grade, List<PaymentMethod> paymentMethods) {
         this.id = id;
@@ -40,6 +41,10 @@ public class Customer {
         this.paymentMethods = paymentMethods;
     }
 
+    /**
+     * 고객이 VIP인지 여부를 반환합니다.
+     * @return 고객이 VIP인지 여부
+     */
     public boolean isVipCustomer() {
         return grade != null && grade.isVip();
     }

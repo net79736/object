@@ -11,12 +11,16 @@ public enum Grade {
     Grade(int level) {
         this.level = level;
     }
-
-    public boolean isVip() {
-        return level == VIP.getLevel();
-    }
-
+    
     public int getLevel() {
         return level;
+    }
+
+    /**
+     * VIP 등급인지 여부를 반환합니다.
+     * @return
+     */
+    public boolean isVip() {
+        return level == VIP.getLevel();
     }
 }

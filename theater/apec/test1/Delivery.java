@@ -18,7 +18,7 @@ public class Delivery {
         this.fee = fee;
     }
 
-    public void calculateDeliveryFee(Customer customer) {
+    public void calculateFee(Customer customer) {
         if (customer.isVipCustomer()) {
             setFee(0);
         } else {

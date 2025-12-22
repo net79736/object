@@ -1,6 +1,7 @@
 package apec.test1;
 
 import java.util.List;
+
 import common.Money;
 
 public class Order {
@@ -41,7 +42,7 @@ public class Order {
      * 고객 등급에 따라 배송비를 계산합니다.
      */
     public void calculateDeliveryFee() {
-        delivery.calculateDeliveryFee(customer);
+        delivery.calculateFee(customer);
     }
 
     /**
@@ -49,8 +50,11 @@ public class Order {
      */
     public void reverseStock() {
         for (OrderItem item : items) {
-            Product product = item.getProduct();
-            product.decreaseStock(item.getQuantity());
+            item.decreaseProductStock();
         }
+    }
+
+    public void processPay() {
+        customer.pay(getTotalAmount());
     }
 }
