@@ -2,6 +2,7 @@ package apec.test2;
 
 import java.util.Date;
 import java.util.List;
+
 import apec.test1.Order;
 
 /**
@@ -16,7 +17,7 @@ public class ReportGenerator {
         List<Order> orders = orderRepository.findByDateRange(startDate, endDate);
         
         // 도메인 객체를 통해 매출 통계를 계산합니다.
-        SalesStatistics statistics = SalesStatistics.from(orders);
+        SalesCaculator statistics = SalesCaculator.from(orders);
         
         // 보고서를 포맷팅합니다.
         return formatReport(statistics);
@@ -28,11 +29,11 @@ public class ReportGenerator {
      * @param statistics 매출 통계
      * @return 포맷팅된 보고서 문자열
      */
-    private String formatReport(SalesStatistics statistics) {
+    private String formatReport(SalesCaculator statistics) {
         return String.format("총 매출: %.2f원\n주문 건수: %d건\n평균 주문액: %.2f원", 
-                           statistics.getTotalSales().getAmount().doubleValue(),
-                           statistics.getTotalOrders(),
-                           statistics.getAverageOrderValue().getAmount().doubleValue()
+                           statistics.getTotalSales().getAmount().doubleValue(), // 총 매출
+                           statistics.getTotalOrders(), // 주문 건수
+                           statistics.getAverageOrderValue().getAmount().doubleValue() // 평균 주문액
         );
     }
 }

@@ -1,23 +1,21 @@
 package apec.test2;
 
 import java.util.List;
+
 import apec.test1.Order;
 import common.Money;
 
 /**
- * 매출 통계를 나타내는 값 객체(Value Object)입니다.
+ * 매출 계산 객체(Calculator Object)입니다.
  * 
- * 여러 주문에 대한 집계 정보(총 매출, 주문 건수, 평균 주문액)를 담고 있으며,
- * 주문 목록으로부터 통계를 생성하는 팩토리 메서드를 제공합니다.
- * 
- * 불변 객체로 설계되어 부작용을 방지합니다.
+ * 여러 주문에 대한 집계 정보(총 매출, 주문 건수, 평균 주문액)를 계산하는 객체입니다.
  */
-public class SalesStatistics {
+public class SalesCaculator {
     private final Money totalSales;
     private final int totalOrders;
     private final Money averageOrderValue;
 
-    private SalesStatistics(Money totalSales, int totalOrders, Money averageOrderValue) {
+    private SalesCaculator(Money totalSales, int totalOrders, Money averageOrderValue) {
         this.totalSales = totalSales;
         this.totalOrders = totalOrders;
         this.averageOrderValue = averageOrderValue;
@@ -29,16 +27,16 @@ public class SalesStatistics {
      * @param orders 주문 목록
      * @return 매출 통계 객체
      */
-    public static SalesStatistics from(List<Order> orders) {
+    public static SalesCaculator from(List<Order> orders) {
         if (orders == null || orders.isEmpty()) {
-            return new SalesStatistics(Money.ZERO, 0, Money.ZERO);
+            return new SalesCaculator(Money.ZERO, 0, Money.ZERO);
         }
 
         Money totalSales = calculateTotalSales(orders);
         int totalOrders = orders.size();
         Money averageOrderValue = calculateAverageOrderValue(totalSales, totalOrders);
 
-        return new SalesStatistics(totalSales, totalOrders, averageOrderValue);
+        return new SalesCaculator(totalSales, totalOrders, averageOrderValue);
     }
 
     /**
