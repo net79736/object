@@ -1,4 +1,4 @@
-package apec.test5.order;
+package apec.payment_order_point.order;
 
 public class OrderItem {
     private Product product; // 주문 상품

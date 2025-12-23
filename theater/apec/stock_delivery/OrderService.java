@@ -1,4 +1,4 @@
-package apec.test1;
+package apec.stock_delivery;
 
 public class OrderService {
     public void processOrder(Order order) {

@@ -1,4 +1,4 @@
-package apec.test5.coupon;
+package apec.payment_order_point.coupon;
 
 /**
  * 쿠폰 타입을 나타내는 enum

@@ -1,4 +1,4 @@
-package apec.test11.interfaces.api.dto.order.response;
+package apec.spring_payment.interfaces.api.dto.order.response;
 
 public class PaymentResponse {
     private boolean success;

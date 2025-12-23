@@ -1,6 +1,6 @@
-package apec.test8;
+package apec.order_factory;
 
-import static apec.test8.CustomerGradeEnum.NORMAL;
+import static apec.order_factory.CustomerGradeEnum.NORMAL;
 
 public class CustomerRepository {
     public Customer findById(Long id) {

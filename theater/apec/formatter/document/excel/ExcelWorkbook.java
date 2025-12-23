@@ -1,4 +1,4 @@
-package apec.test7.document.excel;
+package apec.formatter.document.excel;
 
 public class ExcelWorkbook {
     public void save(String outputPath) {

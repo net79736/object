@@ -1,9 +1,9 @@
-package apec.test7;
+package apec.formatter;
 
 import java.util.ArrayList;
 import java.util.List;
-import apec.test7.formatter.ExcelReportFormatter;
-import apec.test7.formatter.PdfReportFormatter;
+import apec.formatter.formatter.ExcelReportFormatter;
+import apec.formatter.formatter.PdfReportFormatter;
 import common.Money;
 
 public class DocumentAgent {

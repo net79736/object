@@ -1,4 +1,4 @@
-package apec.test5.common;
+package apec.payment_order_point.common;
 
 /**
  * 회원 등급을 나타내는 enum

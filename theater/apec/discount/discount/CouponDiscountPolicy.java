@@ -1,7 +1,7 @@
-package apec.test3.discount;
+package apec.discount.discount;
 
-import apec.test3.coupon.Coupon;
-import apec.test3.discount.intf.DiscountPolicy;
+import apec.discount.coupon.Coupon;
+import apec.discount.discount.intf.DiscountPolicy;
 
 /**
  * 쿠폰 할인 정책

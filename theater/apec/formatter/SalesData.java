@@ -1,4 +1,4 @@
-package apec.test7;
+package apec.formatter;
 
 import java.math.BigDecimal;
 import common.Money;

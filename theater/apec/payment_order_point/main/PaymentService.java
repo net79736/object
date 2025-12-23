@@ -1,10 +1,10 @@
-package apec.test5.main;
+package apec.payment_order_point.main;
 
 import java.util.List;
 
-import apec.test5.common.User;
-import apec.test5.order.Order;
-import apec.test5.payment.intf.PaymentHandler;
+import apec.payment_order_point.common.User;
+import apec.payment_order_point.order.Order;
+import apec.payment_order_point.payment.intf.PaymentHandler;
 
 /**
  * 결제 처리를 담당하는 서비스 클래스

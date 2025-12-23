@@ -1,4 +1,4 @@
-package apec.test6.payment.intf;
+package apec.order.payment.intf;
 
 /**
  * 결제에 필요한 정보를 나타내는 인터페이스

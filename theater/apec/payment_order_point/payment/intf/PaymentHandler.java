@@ -1,7 +1,7 @@
-package apec.test5.payment.intf;
+package apec.payment_order_point.payment.intf;
 
-import apec.test5.common.User;
-import apec.test5.main.PaymentType;
+import apec.payment_order_point.common.User;
+import apec.payment_order_point.main.PaymentType;
 
 /**
  * 결제 처리를 담당하는 인터페이스

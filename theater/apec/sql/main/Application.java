@@ -1,12 +1,12 @@
-package apec.test10.main;
+package apec.sql.main;
 
 import java.time.YearMonth;
 
-import apec.test10.domain.Report;
-import apec.test10.domain.ReportService;
-import apec.test10.infrastructure.ReportRepository;
-import apec.test10.infrastructure.mongo.MongoReportRepository;
-import apec.test10.infrastructure.mysql.MySQLReportRepository;
+import apec.sql.domain.Report;
+import apec.sql.domain.ReportService;
+import apec.sql.infrastructure.ReportRepository;
+import apec.sql.infrastructure.mongo.MongoReportRepository;
+import apec.sql.infrastructure.mysql.MySQLReportRepository;
 
 public class Application {
     public static void main(String[] args) {

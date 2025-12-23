@@ -1,9 +1,9 @@
-package apec.test10.domain;
+package apec.sql.domain;
 
 import java.time.YearMonth;
 import java.util.List;
 
-import apec.test10.infrastructure.ReportRepository;
+import apec.sql.infrastructure.ReportRepository;
 
 public class ReportService {
     private ReportRepository repository;

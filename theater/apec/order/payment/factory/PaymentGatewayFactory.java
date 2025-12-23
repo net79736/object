@@ -1,11 +1,11 @@
-package apec.test6.payment.factory;
+package apec.order.payment.factory;
 
-import apec.test6.PaymentTypeEnum;
-import apec.test6.payment.gateway.AccountPaymentGateway;
-import apec.test6.payment.gateway.CardPaymentGateway;
-import apec.test6.payment.gateway.PaypalPaymentGateway;
-import apec.test6.payment.gateway.WalletPaymentGateway;
-import apec.test6.payment.intf.PaymentGateway;
+import apec.order.PaymentTypeEnum;
+import apec.order.payment.gateway.AccountPaymentGateway;
+import apec.order.payment.gateway.CardPaymentGateway;
+import apec.order.payment.gateway.PaypalPaymentGateway;
+import apec.order.payment.gateway.WalletPaymentGateway;
+import apec.order.payment.intf.PaymentGateway;
 
 /**
  * PaymentType에 따라 적절한 PaymentGateway 구현체를 생성하는 팩토리

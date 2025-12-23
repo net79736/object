@@ -1,7 +1,7 @@
-package apec.test5.discount;
+package apec.payment_order_point.discount;
 
-import apec.test5.coupon.Coupon;
-import apec.test5.discount.intf.DiscountPolicy;
+import apec.payment_order_point.coupon.Coupon;
+import apec.payment_order_point.discount.intf.DiscountPolicy;
 
 /**
  * 쿠폰 할인 정책

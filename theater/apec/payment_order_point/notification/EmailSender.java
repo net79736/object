@@ -1,7 +1,7 @@
-package apec.test5.notification;
+package apec.payment_order_point.notification;
 
-import apec.test5.common.User;
-import apec.test5.notification.intf.NotificationSender;
+import apec.payment_order_point.common.User;
+import apec.payment_order_point.notification.intf.NotificationSender;
 
 /**
  * 이메일 알림 전송 구현체

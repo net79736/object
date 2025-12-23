@@ -1,6 +1,6 @@
 package test.claude6_1;
 
-import apec.test1.Customer;
+import apec.stock_delivery.Customer;
 import common.Money;
 import test.claude6_1.policy.DeliveryFeePolicy;
 

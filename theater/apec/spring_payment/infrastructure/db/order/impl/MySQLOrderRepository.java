@@ -1,7 +1,7 @@
-package apec.test11.infrastructure.db.order.impl;
+package apec.spring_payment.infrastructure.db.order.impl;
 
-import apec.test11.domain.order.model.Order;
-import apec.test11.domain.order.repository.OrderRepository;
+import apec.spring_payment.domain.order.model.Order;
+import apec.spring_payment.domain.order.repository.OrderRepository;
 
 public class MySQLOrderRepository implements OrderRepository {
 

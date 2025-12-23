@@ -1,15 +1,15 @@
-package apec.test8.factory;
+package apec.order_factory.factory;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import apec.test8.Customer;
-import apec.test8.CustomerRepository;
-import apec.test8.Order;
-import apec.test8.OrderItem;
-import apec.test8.Product;
-import apec.test8.ProductRepository;
-import apec.test8.policy.intf.DiscountPolicy;
+import apec.order_factory.Customer;
+import apec.order_factory.CustomerRepository;
+import apec.order_factory.Order;
+import apec.order_factory.OrderItem;
+import apec.order_factory.Product;
+import apec.order_factory.ProductRepository;
+import apec.order_factory.policy.intf.DiscountPolicy;
 
 /**
  * 기본 OrderItem 생성 팩토리 구현체

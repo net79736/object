@@ -1,9 +1,9 @@
-package apec.test11.interfaces.api.controller.order.impl;
+package apec.spring_payment.interfaces.api.controller.order.impl;
 
-import apec.test11.application.order.CreateOrderUseCase;
-import apec.test11.domain.order.model.Order;
-import apec.test11.interfaces.api.controller.order.IOrderController;
-import apec.test11.interfaces.api.dto.order.request.OrderRequest;
+import apec.spring_payment.application.order.CreateOrderUseCase;
+import apec.spring_payment.domain.order.model.Order;
+import apec.spring_payment.interfaces.api.controller.order.IOrderController;
+import apec.spring_payment.interfaces.api.dto.order.request.OrderRequest;
 
 // ========== Presentation Layer ==========
 // UI/API 처리 구현체

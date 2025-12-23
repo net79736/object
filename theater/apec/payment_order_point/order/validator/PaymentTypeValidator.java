@@ -1,8 +1,8 @@
-package apec.test5.order.validator;
+package apec.payment_order_point.order.validator;
 
-import apec.test5.common.User;
-import apec.test5.main.PaymentType;
-import apec.test5.order.validator.intf.PaymentPlanValidator;
+import apec.payment_order_point.common.User;
+import apec.payment_order_point.main.PaymentType;
+import apec.payment_order_point.order.validator.intf.PaymentPlanValidator;
 
 /**
  * 결제 수단 검증

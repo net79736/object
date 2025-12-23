@@ -1,7 +1,7 @@
-package apec.test6.payment.info;
+package apec.order.payment.info;
 
-import static apec.test6.PaymentTypeEnum.BANK_TRANSFER;
-import apec.test6.payment.intf.PaymentInfo;
+import apec.order.PaymentTypeEnum;
+import apec.order.payment.intf.PaymentInfo;
 
 /**
  * 계좌이체 결제에 필요한 정보를 담는 클래스
@@ -31,7 +31,7 @@ public class AccountPaymentInfo implements PaymentInfo {
 
     @Override
     public String getPaymentMethod() {
-        return BANK_TRANSFER.name();
+        return PaymentTypeEnum.BANK_TRANSFER.name();
     }
 }
 

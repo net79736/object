@@ -1,4 +1,4 @@
-package apec.test7.document.pdf;
+package apec.formatter.document.pdf;
 
 public class PdfTable {
     

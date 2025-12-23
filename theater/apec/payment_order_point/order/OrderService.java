@@ -1,9 +1,9 @@
-package apec.test5.order;
+package apec.payment_order_point.order;
 
-import static apec.test5.report.ReportGenerator.buildPaymentInfo;
+import static apec.payment_order_point.report.ReportGenerator.buildPaymentInfo;
 
-import apec.test5.main.PaymentService;
-import apec.test5.notification.NotificationService;
+import apec.payment_order_point.main.PaymentService;
+import apec.payment_order_point.notification.NotificationService;
 
 /**
  * 주문 처리를 담당하는 서비스 클래스

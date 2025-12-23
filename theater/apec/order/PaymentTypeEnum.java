@@ -1,4 +1,4 @@
-package apec.test6;
+package apec.order;
 
 /**
  * 결제 수단 타입을 나타내는 enum

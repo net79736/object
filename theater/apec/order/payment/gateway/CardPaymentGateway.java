@@ -1,9 +1,9 @@
-package apec.test6.payment.gateway;
+package apec.order.payment.gateway;
 
-import apec.test6.Order;
-import apec.test6.payment.info.CardPaymentInfo;
-import apec.test6.payment.intf.PaymentGateway;
-import apec.test6.payment.intf.PaymentInfo;
+import apec.order.Order;
+import apec.order.payment.info.CardPaymentInfo;
+import apec.order.payment.intf.PaymentGateway;
+import apec.order.payment.intf.PaymentInfo;
 import common.Money;
 
 /**

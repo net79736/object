@@ -1,4 +1,4 @@
-package apec.test3.discount.intf;
+package apec.discount.discount.intf;
 
 public interface DiscountPolicy {
     int applyDiscount(int total);

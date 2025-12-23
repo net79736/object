@@ -1,4 +1,4 @@
-package apec.test11.common;
+package apec.spring_payment.common;
 
 import java.math.BigDecimal;
 

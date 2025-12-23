@@ -1,4 +1,4 @@
-package apec.test8;
+package apec.order_factory;
 
 public class OrderItem {
     private Product item; // 주문 상품

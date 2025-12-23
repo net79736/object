@@ -1,7 +1,7 @@
-package apec.test5.discount;
+package apec.payment_order_point.discount;
 
-import apec.test5.common.MembershipLevel;
-import apec.test5.discount.intf.DiscountPolicy;
+import apec.payment_order_point.common.MembershipLevel;
+import apec.payment_order_point.discount.intf.DiscountPolicy;
 
 /**
  * 회원 등급별 할인 정책

@@ -1,7 +1,7 @@
-package apec.test7;
+package apec.formatter;
 
 import java.util.List;
-import apec.test7.formatter.intf.ReportFormatter;
+import apec.formatter.formatter.intf.ReportFormatter;
 
 public class ReportGenerator {
     public void generateReport(List<SalesData> data, ReportFormatter formatter, String outputPath) {

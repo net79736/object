@@ -1,11 +1,11 @@
-package apec.test10.infrastructure.mysql;
+package apec.sql.infrastructure.mysql;
 
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
 
-import apec.test10.domain.ReportData;
-import apec.test10.infrastructure.ReportRepository;
+import apec.sql.domain.ReportData;
+import apec.sql.infrastructure.ReportRepository;
 
 public class MySQLReportRepository implements ReportRepository {
     @Override

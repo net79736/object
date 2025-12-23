@@ -1,6 +1,6 @@
-package apec.test8;
+package apec.order_factory;
 
-import apec.test5.order.Stock;
+import apec.payment_order_point.order.Stock;
 
 public class ProductRepository {
     public Product findById(Long id) {

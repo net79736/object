@@ -1,4 +1,4 @@
-package apec.test10.domain;
+package apec.sql.domain;
 
 public class ReportData {
     

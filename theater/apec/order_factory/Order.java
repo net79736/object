@@ -1,8 +1,8 @@
-package apec.test8;
+package apec.order_factory;
 
 import java.util.List;
 
-import apec.test8.policy.intf.DiscountPolicy;
+import apec.order_factory.policy.intf.DiscountPolicy;
 import common.Money;
 
 public class Order {

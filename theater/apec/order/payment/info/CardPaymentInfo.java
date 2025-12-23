@@ -1,7 +1,7 @@
-package apec.test6.payment.info;
+package apec.order.payment.info;
 
-import static apec.test6.PaymentTypeEnum.CARD;
-import apec.test6.payment.intf.PaymentInfo;
+import apec.order.PaymentTypeEnum;
+import apec.order.payment.intf.PaymentInfo;
 
 /**
  * 카드 결제에 필요한 정보를 담는 클래스
@@ -32,7 +32,7 @@ public class CardPaymentInfo implements PaymentInfo {
 
     @Override
     public String getPaymentMethod() {
-        return CARD.name();
+        return PaymentTypeEnum.CARD.name();
     }
 }
 

@@ -1,4 +1,4 @@
-package apec.test3.coupon;
+package apec.discount.coupon;
 
 public enum CouponType {
     FIXED, // 고정 금액 할인

@@ -1,7 +1,7 @@
-package apec.test4;
+package apec.notification;
 
 import java.util.List;
-import apec.test4.notification.intf.NotificationSender;
+import apec.notification.notification.intf.NotificationSender;
 
 public class User {
     private List<NotificationSender> notificationSenders;   

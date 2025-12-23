@@ -1,10 +1,10 @@
-package apec.test8.factory;
+package apec.order_factory.factory;
 
-import apec.test8.CustomerGradeEnum;
-import apec.test8.policy.GoldDiscountPolicy;
-import apec.test8.policy.NormalDiscountPolicy;
-import apec.test8.policy.VIPDiscountPolicy;
-import apec.test8.policy.intf.DiscountPolicy;
+import apec.order_factory.CustomerGradeEnum;
+import apec.order_factory.policy.GoldDiscountPolicy;
+import apec.order_factory.policy.NormalDiscountPolicy;
+import apec.order_factory.policy.VIPDiscountPolicy;
+import apec.order_factory.policy.intf.DiscountPolicy;
 
 public class DiscountPolicyFactory {
 

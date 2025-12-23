@@ -1,4 +1,4 @@
-package apec.test3.coupon;
+package apec.discount.coupon;
 
 /**
  * 쿠폰 클래스

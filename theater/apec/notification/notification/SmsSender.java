@@ -1,8 +1,8 @@
-package apec.test4.notification;
+package apec.notification.notification;
 
-import apec.test4.NotificationSettings;
-import apec.test4.User;
-import apec.test4.notification.intf.NotificationSender;
+import apec.notification.NotificationSettings;
+import apec.notification.User;
+import apec.notification.notification.intf.NotificationSender;
 
 public class SmsSender implements NotificationSender {
     @Override

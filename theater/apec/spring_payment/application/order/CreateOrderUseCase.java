@@ -1,10 +1,10 @@
-package apec.test11.application.order;
+package apec.spring_payment.application.order;
 
-import apec.test11.domain.order.model.Order;
-import apec.test11.domain.order.repository.OrderRepository;
-import apec.test11.infrastructure.gateway.payment.intf.PaymentGateway;
-import apec.test11.interfaces.api.dto.order.request.OrderRequest;
-import apec.test11.interfaces.api.dto.order.response.PaymentResponse;
+import apec.spring_payment.domain.order.model.Order;
+import apec.spring_payment.domain.order.repository.OrderRepository;
+import apec.spring_payment.infrastructure.gateway.payment.intf.PaymentGateway;
+import apec.spring_payment.interfaces.api.dto.order.request.OrderRequest;
+import apec.spring_payment.interfaces.api.dto.order.response.PaymentResponse;
 
 // ========== Application Layer ==========
 // Use Case 구현, 인터페이스 정의

@@ -1,4 +1,4 @@
-package apec.test11.config;
+package apec.spring_payment.config;
 
 public class DataSource {
     

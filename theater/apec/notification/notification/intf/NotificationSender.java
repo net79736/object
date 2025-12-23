@@ -1,7 +1,7 @@
-package apec.test4.notification.intf;
+package apec.notification.notification.intf;
 
-import apec.test4.NotificationSettings;
-import apec.test4.User;
+import apec.notification.NotificationSettings;
+import apec.notification.User;
 
 public interface NotificationSender {
     /**

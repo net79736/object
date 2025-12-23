@@ -1,4 +1,4 @@
-package apec.test8.policy.intf;
+package apec.order_factory.policy.intf;
 
 import common.Money;
 

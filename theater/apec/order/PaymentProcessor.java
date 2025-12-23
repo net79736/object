@@ -1,7 +1,7 @@
-package apec.test6;
+package apec.order;
 
-import apec.test6.payment.factory.PaymentGatewayFactory;
-import apec.test6.payment.intf.PaymentGateway;
+import apec.order.payment.factory.PaymentGatewayFactory;
+import apec.order.payment.intf.PaymentGateway;
 
 /**
  * 주문에 대한 결제를 처리하는 클래스

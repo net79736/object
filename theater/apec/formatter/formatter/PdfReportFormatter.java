@@ -1,10 +1,10 @@
-package apec.test7.formatter;
+package apec.formatter.formatter;
 
 import java.util.List;
-import apec.test7.SalesData;
-import apec.test7.document.pdf.PdfDocument;
-import apec.test7.document.pdf.PdfTable;
-import apec.test7.formatter.intf.ReportFormatter;
+import apec.formatter.SalesData;
+import apec.formatter.document.pdf.PdfDocument;
+import apec.formatter.document.pdf.PdfTable;
+import apec.formatter.formatter.intf.ReportFormatter;
 
 public class PdfReportFormatter implements ReportFormatter {
     @Override

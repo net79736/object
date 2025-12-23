@@ -1,7 +1,7 @@
-package apec.test11.domain.order.dto;
+package apec.spring_payment.domain.order.dto;
 
-import apec.test11.domain.order.enums.OrderStatus;
-import apec.test11.common.Money;
+import apec.spring_payment.domain.order.enums.OrderStatus;
+import apec.spring_payment.common.Money;
 
 /**
  * 결제에 필요한 정보를 나타내는 인터페이스

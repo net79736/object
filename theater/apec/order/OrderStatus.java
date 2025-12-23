@@ -1,4 +1,4 @@
-package apec.test6;
+package apec.order;
 
 public enum OrderStatus {
     PENDING, // 주문 생성 후 결제 전

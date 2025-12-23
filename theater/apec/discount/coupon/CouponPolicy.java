@@ -1,4 +1,4 @@
-package apec.test3.coupon;
+package apec.discount.coupon;
 
 public interface CouponPolicy {
     int applyDiscount(int total);

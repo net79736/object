@@ -1,6 +1,6 @@
-package apec.test5.point;
+package apec.payment_order_point.point;
 
-import apec.test5.common.User;
+import apec.payment_order_point.common.User;
 
 public class PointService {
     

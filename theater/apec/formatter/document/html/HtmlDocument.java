@@ -1,4 +1,4 @@
-package apec.test7.document.html;
+package apec.formatter.document.html;
 
 public class HtmlDocument {
     public void setBody(String body) {

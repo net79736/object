@@ -1,7 +1,7 @@
-package apec.test7.formatter.intf;
+package apec.formatter.formatter.intf;
 
 import java.util.List;
-import apec.test7.SalesData;
+import apec.formatter.SalesData;
 
 public interface ReportFormatter {
     /**

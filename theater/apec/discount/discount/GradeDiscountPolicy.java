@@ -1,7 +1,7 @@
-package apec.test3.discount;
+package apec.discount.discount;
 
-import apec.test3.MembershipLevel;
-import apec.test3.discount.intf.DiscountPolicy;
+import apec.discount.MembershipLevel;
+import apec.discount.discount.intf.DiscountPolicy;
 
 public class GradeDiscountPolicy implements DiscountPolicy {
     private MembershipLevel membershipLevel;

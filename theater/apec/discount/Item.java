@@ -1,4 +1,4 @@
-package apec.test3;
+package apec.discount;
 
 public class Item {
     

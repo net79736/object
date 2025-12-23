@@ -1,8 +1,8 @@
-package apec.test11.infrastructure.gateway.payment.impl;
+package apec.spring_payment.infrastructure.gateway.payment.impl;
 
-import apec.test11.domain.order.dto.PaymentInfo;
-import apec.test11.infrastructure.gateway.payment.intf.PaymentGateway;
-import apec.test11.interfaces.api.dto.order.response.PaymentResponse;
+import apec.spring_payment.domain.order.dto.PaymentInfo;
+import apec.spring_payment.infrastructure.gateway.payment.intf.PaymentGateway;
+import apec.spring_payment.interfaces.api.dto.order.response.PaymentResponse;
 
 public class PayPalPaymentGateway implements PaymentGateway {
     @Override

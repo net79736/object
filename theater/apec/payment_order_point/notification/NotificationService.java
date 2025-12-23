@@ -1,6 +1,6 @@
-package apec.test5.notification;
+package apec.payment_order_point.notification;
 
-import apec.test5.common.User;
+import apec.payment_order_point.common.User;
 
 /**
  * 알림 서비스 클래스

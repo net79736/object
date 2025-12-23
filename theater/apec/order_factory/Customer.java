@@ -1,4 +1,4 @@
-package apec.test8;
+package apec.order_factory;
 
 public class Customer {
     private Long id;

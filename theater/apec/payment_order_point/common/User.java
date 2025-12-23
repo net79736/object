@@ -1,15 +1,15 @@
-package apec.test5.common;
+package apec.payment_order_point.common;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import apec.test5.coupon.Coupon;
-import apec.test5.discount.CouponDiscountPolicy;
-import apec.test5.discount.GradeDiscountPolicy;
-import apec.test5.discount.intf.DiscountPolicy;
-import apec.test5.notification.NotificationSettings;
-import apec.test5.notification.intf.NotificationSender;
-import apec.test5.point.Point;
+import apec.payment_order_point.coupon.Coupon;
+import apec.payment_order_point.discount.CouponDiscountPolicy;
+import apec.payment_order_point.discount.GradeDiscountPolicy;
+import apec.payment_order_point.discount.intf.DiscountPolicy;
+import apec.payment_order_point.notification.NotificationSettings;
+import apec.payment_order_point.notification.intf.NotificationSender;
+import apec.payment_order_point.point.Point;
 
 /**
  * 사용자 클래스

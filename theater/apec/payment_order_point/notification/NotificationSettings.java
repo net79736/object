@@ -1,4 +1,4 @@
-package apec.test5.notification;
+package apec.payment_order_point.notification;
 
 /**
  * 알림 설정 클래스

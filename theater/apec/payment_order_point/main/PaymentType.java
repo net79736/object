@@ -1,4 +1,4 @@
-package apec.test5.main;
+package apec.payment_order_point.main;
 
 public enum PaymentType {
     CREDIT_CARD, // 신용카드

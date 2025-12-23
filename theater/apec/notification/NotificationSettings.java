@@ -1,4 +1,4 @@
-package apec.test4;
+package apec.notification;
 
 public class NotificationSettings {
     private boolean emailEnabled;

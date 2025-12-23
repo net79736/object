@@ -1,7 +1,8 @@
-package apec.test6;
+package apec.order;
 
 import java.time.LocalDateTime;
-import apec.test6.payment.intf.PaymentInfo;
+
+import apec.order.payment.intf.PaymentInfo;
 import common.Money;
 
 public class Order {

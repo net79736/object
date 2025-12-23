@@ -1,12 +1,12 @@
-package apec.test3;
+package apec.discount;
 
 import java.util.ArrayList;
 import java.util.List;
-import apec.test3.coupon.Coupon;
-import apec.test3.discount.CouponDiscountPolicy;
-import apec.test3.discount.FirstPurchaseDiscountPolicy;
-import apec.test3.discount.GradeDiscountPolicy;
-import apec.test3.discount.intf.DiscountPolicy;
+import apec.discount.coupon.Coupon;
+import apec.discount.discount.CouponDiscountPolicy;
+import apec.discount.discount.FirstPurchaseDiscountPolicy;
+import apec.discount.discount.GradeDiscountPolicy;
+import apec.discount.discount.intf.DiscountPolicy;
 
 /**
  * 사용자 클래스

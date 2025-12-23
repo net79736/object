@@ -1,4 +1,4 @@
-package apec.test5.discount.intf;
+package apec.payment_order_point.discount.intf;
 
 /**
  * 할인 정책을 나타내는 인터페이스

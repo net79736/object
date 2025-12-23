@@ -1,14 +1,14 @@
-package apec.test5.order;
+package apec.payment_order_point.order;
 
 import java.util.List;
 
-import apec.test5.common.User;
-import apec.test5.main.PaymentPlan;
-import apec.test5.main.PaymentType;
-import apec.test5.order.validator.PaymentTypeValidator;
-import apec.test5.order.validator.PointAmountValidator;
-import apec.test5.order.validator.PointBalanceValidator;
-import apec.test5.order.validator.intf.PaymentPlanValidator;
+import apec.payment_order_point.common.User;
+import apec.payment_order_point.main.PaymentPlan;
+import apec.payment_order_point.main.PaymentType;
+import apec.payment_order_point.order.validator.PaymentTypeValidator;
+import apec.payment_order_point.order.validator.PointAmountValidator;
+import apec.payment_order_point.order.validator.PointBalanceValidator;
+import apec.payment_order_point.order.validator.intf.PaymentPlanValidator;
 
 /**
  * 주문 클래스

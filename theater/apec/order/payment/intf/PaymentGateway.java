@@ -1,6 +1,6 @@
-package apec.test6.payment.intf;
+package apec.order.payment.intf;
 
-import apec.test6.Order;
+import apec.order.Order;
 import common.Money;
 
 /**

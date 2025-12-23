@@ -1,4 +1,4 @@
-package apec.test11.domain.order.enums;
+package apec.spring_payment.domain.order.enums;
 
 public enum OrderStatus {
     PENDING,

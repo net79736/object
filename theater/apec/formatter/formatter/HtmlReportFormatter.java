@@ -1,8 +1,8 @@
-package apec.test7.formatter;
+package apec.formatter.formatter;
 
 import java.util.List;
-import apec.test7.SalesData;
-import apec.test7.document.html.HtmlDocument;
+import apec.formatter.SalesData;
+import apec.formatter.document.html.HtmlDocument;
 
 public class HtmlReportFormatter {
     public void format(List<SalesData> data, String outputPath) {

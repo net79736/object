@@ -1,6 +1,6 @@
-package apec.test5.report;
+package apec.payment_order_point.report;
 
-import apec.test5.order.Order;
+import apec.payment_order_point.order.Order;
 
 public class ReportGenerator {
     /**

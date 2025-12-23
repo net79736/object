@@ -1,9 +1,9 @@
-package apec.test2;
+package apec.report;
 
 import java.util.Date;
 import java.util.List;
 
-import apec.test1.Order;
+import apec.stock_delivery.Order;
 
 /**
  * 매출 보고서를 생성하는 애플리케이션 서비스입니다.

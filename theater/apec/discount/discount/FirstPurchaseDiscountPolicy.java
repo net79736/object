@@ -1,6 +1,6 @@
-package apec.test3.discount;
+package apec.discount.discount;
 
-import apec.test3.discount.intf.DiscountPolicy;
+import apec.discount.discount.intf.DiscountPolicy;
 
 public class FirstPurchaseDiscountPolicy implements DiscountPolicy {
     private boolean isFirstPurchase;

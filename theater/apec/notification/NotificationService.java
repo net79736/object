@@ -1,4 +1,4 @@
-package apec.test4;
+package apec.notification;
 
 public class NotificationService {
     public void sendNotification(User user, String message) {

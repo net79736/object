@@ -1,7 +1,7 @@
-package apec.test8.policy;
+package apec.order_factory.policy;
 
-import apec.test8.CustomerGradeEnum;
-import apec.test8.policy.intf.DiscountPolicy;
+import apec.order_factory.CustomerGradeEnum;
+import apec.order_factory.policy.intf.DiscountPolicy;
 import common.Money;
 
 public class NormalDiscountPolicy implements DiscountPolicy {

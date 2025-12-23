@@ -1,7 +1,7 @@
-package apec.test6.payment.info;
+package apec.order.payment.info;
 
-import static apec.test6.PaymentTypeEnum.WALLET;
-import apec.test6.payment.intf.PaymentInfo;
+import apec.order.PaymentTypeEnum;
+import apec.order.payment.intf.PaymentInfo;
 
 /**
  * 지갑(암호화폐) 결제에 필요한 정보를 담는 클래스
@@ -19,7 +19,7 @@ public class WalletPaymentInfo implements PaymentInfo {
 
     @Override
     public String getPaymentMethod() {
-        return WALLET.name();
+        return PaymentTypeEnum.WALLET.name();
     }
 }
 

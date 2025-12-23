@@ -1,4 +1,4 @@
-package apec.test6;
+package apec.order;
 
 /**
  * 고객 도메인 모델

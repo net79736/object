@@ -1,6 +1,6 @@
-package apec.test11.domain.order.repository;
+package apec.spring_payment.domain.order.repository;
 
-import apec.test11.domain.order.model.Order;
+import apec.spring_payment.domain.order.model.Order;
 
 public interface OrderRepository {
     Order save(Order order);

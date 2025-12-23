@@ -1,8 +1,8 @@
-package apec.test5.payment;
+package apec.payment_order_point.payment;
 
-import apec.test5.common.User;
-import apec.test5.main.PaymentType;
-import apec.test5.payment.intf.PaymentHandler;
+import apec.payment_order_point.common.User;
+import apec.payment_order_point.main.PaymentType;
+import apec.payment_order_point.payment.intf.PaymentHandler;
 
 /**
  * 계좌이체 결제를 처리하는 핸들러

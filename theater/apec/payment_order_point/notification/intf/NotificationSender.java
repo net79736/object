@@ -1,7 +1,7 @@
-package apec.test5.notification.intf;
+package apec.payment_order_point.notification.intf;
 
-import apec.test5.common.User;
-import apec.test5.notification.NotificationSettings;
+import apec.payment_order_point.common.User;
+import apec.payment_order_point.notification.NotificationSettings;
 
 /**
  * 알림 전송을 담당하는 인터페이스

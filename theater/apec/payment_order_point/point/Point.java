@@ -1,4 +1,4 @@
-package apec.test5.point;
+package apec.payment_order_point.point;
 
 public class Point {
     private int point;

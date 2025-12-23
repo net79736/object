@@ -1,9 +1,9 @@
-package apec.test11.domain.order.model;
+package apec.spring_payment.domain.order.model;
 
-import apec.test11.domain.order.dto.PaymentInfo;
-import apec.test11.domain.order.enums.OrderStatus;
-import apec.test11.interfaces.api.dto.order.request.OrderRequest;
-import apec.test11.common.Money;
+import apec.spring_payment.domain.order.dto.PaymentInfo;
+import apec.spring_payment.domain.order.enums.OrderStatus;
+import apec.spring_payment.interfaces.api.dto.order.request.OrderRequest;
+import apec.spring_payment.common.Money;
 
 // ========== Domain Layer (최상위) ==========
 // 순수 비즈니스 로직, 외부 의존성 없음

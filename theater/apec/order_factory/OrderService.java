@@ -1,8 +1,8 @@
-package apec.test8;
+package apec.order_factory;
 
 import java.util.List;
 
-import apec.test8.factory.OrderFactory;
+import apec.order_factory.factory.OrderFactory;
 import common.Money;
 
 public class OrderService {

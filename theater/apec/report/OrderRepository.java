@@ -1,9 +1,9 @@
-package apec.test2;
+package apec.report;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import apec.test1.Order;
+import apec.stock_delivery.Order;
 
 public class OrderRepository {
 

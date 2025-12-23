@@ -1,11 +1,11 @@
-package apec.test10.infrastructure.mongo;
+package apec.sql.infrastructure.mongo;
 
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
 
-import apec.test10.domain.ReportData;
-import apec.test10.infrastructure.ReportRepository;
+import apec.sql.domain.ReportData;
+import apec.sql.infrastructure.ReportRepository;
 
 public class MongoReportRepository implements ReportRepository {
     @Override

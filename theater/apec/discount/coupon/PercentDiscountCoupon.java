@@ -1,4 +1,4 @@
-package apec.test3.coupon;
+package apec.discount.coupon;
 
 public class PercentDiscountCoupon implements CouponPolicy {
     private int discountRate;

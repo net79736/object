@@ -1,4 +1,4 @@
-package apec.test1;
+package apec.stock_delivery;
 
 import test.claude6_1.Stock;
 
