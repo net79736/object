@@ -18,6 +18,7 @@ public class PercentDiscountPolicy implements DiscountPolicy {
 
     private final double discountRate;
     private final List<DiscountCondition> conditions;
+    private final DiscountType discountType = DiscountType.PERCENT_DISCOUNT;
 
     public PercentDiscountPolicy(double discountRate, DiscountCondition... conditions) {
         this.discountRate = discountRate;
@@ -33,8 +34,12 @@ public class PercentDiscountPolicy implements DiscountPolicy {
     }
 
     @Override
+    public DiscountType getDiscountType() {
+        return discountType;
+    }
+
+    @Override
     public int applyDiscount(int total) {
         return (int)(total * (1 - discountRate));
     }
-    
 }

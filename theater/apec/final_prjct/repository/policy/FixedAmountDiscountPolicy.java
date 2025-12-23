@@ -19,10 +19,24 @@ public class FixedAmountDiscountPolicy implements DiscountPolicy {
 
     private final int discountAmount;
     private final List<DiscountCondition> conditions;
+    private final DiscountType discountType = DiscountType.FIXED_AMOUNT;
 
     public FixedAmountDiscountPolicy(int discountAmount, DiscountCondition... conditions) {
         this.discountAmount = discountAmount;
         this.conditions = Arrays.asList(conditions);
+    }
+
+    public int getDiscountAmount() {
+        return discountAmount;
+    }
+
+    public List<DiscountCondition> getConditions() {
+        return conditions;
+    }
+
+    @Override
+    public DiscountType getDiscountType() {
+        return discountType;
     }
 
     @Override

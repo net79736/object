@@ -1,5 +1,7 @@
 package apec.final_prjct.repository.policy.intf;
 
+import apec.final_prjct.repository.policy.DiscountType;
+
 /**
  * 할인 정책을 나타내는 인터페이스
  * 
@@ -14,4 +16,6 @@ public interface DiscountPolicy {
      * @return 할인 적용 후 금액
      */
     int applyDiscount(int total);
+
+    DiscountType getDiscountType();
 }
