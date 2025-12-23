@@ -1,7 +1,7 @@
-package apec.final_prjct.service.condition;
+package apec.final_prjct.repository.condition;
 
 import apec.final_prjct.domain.Order;
-import apec.final_prjct.service.condition.intf.DiscountCondition;
+import apec.final_prjct.repository.condition.intf.DiscountCondition;
 
 /**
  * 회원 등급 할인 조건

@@ -1,4 +1,4 @@
-package apec.final_prjct.service.condition.intf;
+package apec.final_prjct.repository.condition.intf;
 
 import apec.final_prjct.domain.Order;
 

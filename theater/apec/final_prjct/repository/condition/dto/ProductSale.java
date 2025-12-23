@@ -1,4 +1,4 @@
-package apec.final_prjct.service.condition.dto;
+package apec.final_prjct.repository.condition.dto;
 
 public class ProductSale {
     private Long productId;

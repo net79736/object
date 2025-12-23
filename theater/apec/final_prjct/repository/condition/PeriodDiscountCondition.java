@@ -1,10 +1,10 @@
-package apec.final_prjct.service.condition;
+package apec.final_prjct.repository.condition;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 
 import apec.final_prjct.domain.Order;
-import apec.final_prjct.service.condition.intf.DiscountCondition;
+import apec.final_prjct.repository.condition.intf.DiscountCondition;
 
 /**
  * 기간 할인 조건

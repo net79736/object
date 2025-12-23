@@ -1,4 +1,4 @@
-package apec.final_prjct.service.policy.intf;
+package apec.final_prjct.repository.policy.intf;
 
 /**
  * 할인 정책을 나타내는 인터페이스

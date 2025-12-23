@@ -1,10 +1,10 @@
-package apec.final_prjct.service.policy;
+package apec.final_prjct.repository.policy;
 
 import java.util.Arrays;
 import java.util.List;
 
-import apec.final_prjct.service.condition.intf.DiscountCondition;
-import apec.final_prjct.service.policy.intf.DiscountPolicy;
+import apec.final_prjct.repository.condition.intf.DiscountCondition;
+import apec.final_prjct.repository.policy.intf.DiscountPolicy;
 
 /**
  * 퍼센트 할인 정책
