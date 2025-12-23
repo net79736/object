@@ -7,6 +7,6 @@ public class OrderService {
         // 재고 감소
         order.reverseStock();
         // 결제 처리
-        order.processPay();
+        order.requestPayment();
     }    
 }

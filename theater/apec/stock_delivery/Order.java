@@ -1,7 +1,6 @@
 package apec.stock_delivery;
 
 import java.util.List;
-
 import common.Money;
 
 public class Order {
@@ -58,7 +57,7 @@ public class Order {
         }
     }
 
-    public void processPay() {
+    public void requestPayment() {
         customer.pay(getTotalAmount());
     }
 }
