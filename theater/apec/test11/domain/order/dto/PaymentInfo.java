@@ -1,4 +1,7 @@
-package apec.test11.paymentinfo;
+package apec.test11.domain.order.dto;
+
+import apec.test11.domain.order.enums.OrderStatus;
+import apec.test11.common.Money;
 
 /**
  * 결제에 필요한 정보를 나타내는 인터페이스
@@ -15,4 +18,10 @@ public interface PaymentInfo {
      * @return 결제 수단 타입
      */
     String getPaymentMethod();
+
+    static PaymentInfo of(Long id, Money amount, OrderStatus status) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'of'");
+    }
 }
+
