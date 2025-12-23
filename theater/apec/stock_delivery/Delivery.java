@@ -20,9 +20,9 @@ public class Delivery {
 
     public void calculateFee(Customer customer) {
         if (customer.isVipCustomer()) {
-            setFee(0);
+            setFee(0); // VIP 고객은 배송비 무료
         } else {
-            // TODO: 배송비 계산 로직 구현
+            setFee(fee); // 기존 고객은 기본 배송비 적용
         }
     }
     

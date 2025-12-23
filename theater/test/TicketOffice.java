@@ -1,9 +1,9 @@
 package test;
 
+import java.util.List;
+
 import common.Money;
 import common.Ticket;
-
-import java.util.List;
 
 public class TicketOffice {
     // 티켓
@@ -38,7 +38,7 @@ public class TicketOffice {
 
     public Ticket issueTicket() {
         if (!tickets.isEmpty()) {
-            return tickets.removeFirst();
+            return tickets.remove(0);
         }
         return null;
     }
