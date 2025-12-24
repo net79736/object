@@ -1,13 +1,13 @@
 package test.claude6_3;
 
-import apec.discount.enums.CouponType;
+import apec.discount.enums.CouponTypeEnum;
 
 public class Coupon {
-    private CouponType type; // 쿠폰 타입
+    private CouponTypeEnum type; // 쿠폰 타입
     private int amount; // 할인 금액
     private int discountRate; // 할인 비율
 
-    public CouponType getType() {
+    public CouponTypeEnum getType() {
         return type;
     }
 
@@ -28,7 +28,7 @@ public class Coupon {
      * @return 할인 후 금액
      */
     public int applyDiscountAmount(int total) {
-        if (getType() == CouponType.FIXED) {
+        if (getType() == CouponTypeEnum.FIXED) {
             return Math.max(0, total - getAmount()); // 최소 0원 보장
         } else {
             // discountRate는 백분율 (예: 10 = 10%)

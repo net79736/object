@@ -1,6 +1,6 @@
 package apec.discount.enums;
 
-public enum CouponType {
+public enum CouponTypeEnum {
     FIXED, // 고정 금액 할인
     PERCENT; // 비율 할인
 

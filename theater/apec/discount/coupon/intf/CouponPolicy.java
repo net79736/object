@@ -1,8 +1,8 @@
 package apec.discount.coupon.intf;
 
-import apec.discount.enums.CouponType;
+import apec.discount.enums.CouponTypeEnum;
 
 public interface CouponPolicy {
     int applyDiscount(int total);
-    CouponType getCouponType();
+    CouponTypeEnum getCouponType();
 }

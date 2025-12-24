@@ -1,11 +1,11 @@
 package apec.discount.coupon;
 
 import apec.discount.coupon.intf.CouponPolicy;
-import apec.discount.enums.CouponType;
+import apec.discount.enums.CouponTypeEnum;
 
 public class PercentDiscountCoupon implements CouponPolicy {
     private int discountRate;
-    private final CouponType couponType = CouponType.PERCENT;
+    private final CouponTypeEnum couponType = CouponTypeEnum.PERCENT;
 
     public PercentDiscountCoupon(int discountRate) {
         this.discountRate = discountRate;
@@ -17,7 +17,7 @@ public class PercentDiscountCoupon implements CouponPolicy {
     }
 
     @Override
-    public CouponType getCouponType() {
+    public CouponTypeEnum getCouponType() {
         return couponType;
     }
 }

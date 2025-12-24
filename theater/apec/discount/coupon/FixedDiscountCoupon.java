@@ -1,11 +1,11 @@
 package apec.discount.coupon;
 
 import apec.discount.coupon.intf.CouponPolicy;
-import apec.discount.enums.CouponType;
+import apec.discount.enums.CouponTypeEnum;
 
 public class FixedDiscountCoupon implements CouponPolicy {
     private int amount;
-    private final CouponType couponType = CouponType.FIXED;
+    private final CouponTypeEnum couponType = CouponTypeEnum.FIXED;
 
     public FixedDiscountCoupon(int amount) {
         this.amount = amount;
@@ -17,7 +17,7 @@ public class FixedDiscountCoupon implements CouponPolicy {
     }
 
     @Override
-    public CouponType getCouponType() { 
+    public CouponTypeEnum getCouponType() { 
         return couponType;
     }
 }
