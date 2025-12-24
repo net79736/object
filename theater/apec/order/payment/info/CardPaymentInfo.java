@@ -11,11 +11,13 @@ public class CardPaymentInfo implements PaymentInfo {
     private final String cardNumber;
     private final String cvv;
     private final String cardholderName;
+    private final PaymentTypeEnum paymentType; // 결제 수단
 
-    public CardPaymentInfo(String cardNumber, String cvv, String cardholderName) {
+    public CardPaymentInfo(String cardNumber, String cvv, String cardholderName, PaymentTypeEnum paymentType) {
         this.cardNumber = cardNumber;
         this.cvv = cvv;
         this.cardholderName = cardholderName;
+        this.paymentType = paymentType;
     }
 
     public String getCardNumber() {
@@ -28,6 +30,10 @@ public class CardPaymentInfo implements PaymentInfo {
 
     public String getCardholderName() {
         return cardholderName;
+    }
+
+    public PaymentTypeEnum getPaymentType() {
+        return paymentType;
     }
 
     @Override

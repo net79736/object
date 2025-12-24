@@ -37,7 +37,7 @@ public class PaymentProcessor {
         PaymentGateway paymentGateway = PaymentGatewayFactory.create(paymentTypeEnum);
         
         // 변하지 않는 부분: 결제 처리 행위 자체
-        paymentGateway.pay(order, order.getPaymentInfo(), order.getAmount());
+        paymentGateway.requestPayment(order, order.getPaymentInfo(), order.getAmount());
         
         // 변하지 않는 부분: 주문 상태 업데이트
         order.setPaymentStatus(OrderStatus.PAID);

@@ -10,11 +10,13 @@ public class AccountPaymentInfo implements PaymentInfo {
     private final String accountNumber;
     private final String bankCode;
     private final String accountHolderName;
+    private final PaymentTypeEnum paymentType; // 결제 수단
 
-    public AccountPaymentInfo(String accountNumber, String bankCode, String accountHolderName) {
+    public AccountPaymentInfo(String accountNumber, String bankCode, String accountHolderName, PaymentTypeEnum paymentType) {
         this.accountNumber = accountNumber;
         this.bankCode = bankCode;
         this.accountHolderName = accountHolderName;
+        this.paymentType = paymentType;
     }
 
     public String getAccountNumber() {
@@ -27,6 +29,10 @@ public class AccountPaymentInfo implements PaymentInfo {
 
     public String getAccountHolderName() {
         return accountHolderName;
+    }
+
+    public PaymentTypeEnum getPaymentType() {
+        return paymentType;
     }
 
     @Override

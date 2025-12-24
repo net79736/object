@@ -13,12 +13,12 @@ import common.Money;
  */
 public class AccountPaymentGateway implements PaymentGateway {
     @Override
-    public void pay(Order order, PaymentInfo paymentInfo, Money amount) {
+    public void requestPayment(Order order, PaymentInfo paymentInfo, Money amount) {
         AccountPaymentInfo accountInfo = (AccountPaymentInfo) paymentInfo;
         
-        String accountNumber = accountInfo.getAccountNumber();
-        String bankCode = accountInfo.getBankCode();
-        String accountHolderName = accountInfo.getAccountHolderName();
+        String accountNumber = accountInfo.getAccountNumber(); // 계좌번호
+        String bankCode = accountInfo.getBankCode(); // 은행코드
+        String accountHolderName = accountInfo.getAccountHolderName(); // 소유주명
         
         System.out.println("계좌이체 결제 처리: " + accountNumber + " " + bankCode + " " + accountHolderName + " " + amount);
     }

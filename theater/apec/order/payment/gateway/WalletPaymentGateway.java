@@ -13,7 +13,7 @@ import common.Money;
  */
 public class WalletPaymentGateway implements PaymentGateway {
     @Override
-    public void pay(Order order, PaymentInfo paymentInfo, Money amount) {
+    public void requestPayment(Order order, PaymentInfo paymentInfo, Money amount) {
         WalletPaymentInfo walletInfo = (WalletPaymentInfo) paymentInfo;
         
         String walletAddress = walletInfo.getWalletAddress();

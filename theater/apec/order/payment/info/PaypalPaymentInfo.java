@@ -8,13 +8,19 @@ import apec.order.payment.intf.PaymentInfo;
  */
 public class PaypalPaymentInfo implements PaymentInfo {
     private final String email;
+    private final PaymentTypeEnum paymentType; // 결제 수단
 
-    public PaypalPaymentInfo(String email) {
+    public PaypalPaymentInfo(String email, PaymentTypeEnum paymentType) {
         this.email = email;
+        this.paymentType = paymentType;
     }
 
     public String getEmail() {
         return email;
+    }
+
+    public PaymentTypeEnum getPaymentType() {
+        return paymentType;
     }
 
     @Override

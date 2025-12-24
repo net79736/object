@@ -20,5 +20,5 @@ public interface PaymentGateway {
      * @param paymentInfo 결제에 필요한 정보 (결제 수단별로 다른 정보)
      * @param amount 결제 금액
      */
-    void pay(Order order, PaymentInfo paymentInfo, Money amount);
+    void requestPayment(Order order, PaymentInfo paymentInfo, Money amount);
 }

@@ -13,7 +13,7 @@ import common.Money;
  */
 public class PaypalPaymentGateway implements PaymentGateway {
     @Override
-    public void pay(Order order, PaymentInfo paymentInfo, Money amount) {
+    public void requestPayment(Order order, PaymentInfo paymentInfo, Money amount) {
         PaypalPaymentInfo paypalInfo = (PaypalPaymentInfo) paymentInfo;
         
         String email = paypalInfo.getEmail();

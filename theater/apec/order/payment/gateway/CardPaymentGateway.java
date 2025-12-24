@@ -15,13 +15,13 @@ import common.Money;
  */
 public class CardPaymentGateway implements PaymentGateway {
     @Override
-    public void pay(Order order, PaymentInfo paymentInfo, Money amount) {
+    public void requestPayment(Order order, PaymentInfo paymentInfo, Money amount) {
         // PaymentInfo를 CardPaymentInfo로 캐스팅하여 카드 정보 추출
         CardPaymentInfo cardInfo = (CardPaymentInfo) paymentInfo; // 캐스팅 필요
         
-        String cardNumber = cardInfo.getCardNumber();
-        String cvv = cardInfo.getCvv();
-        String cardholderName = cardInfo.getCardholderName();
+        String cardNumber = cardInfo.getCardNumber(); // 카드번호
+        String cvv = cardInfo.getCvv(); // 카드비밀번호
+        String cardholderName = cardInfo.getCardholderName(); // 카드소유자명
         
         System.out.println("카드 결제 처리: " + cardNumber + " " + cvv + " " + cardholderName + " " + amount);
     }
