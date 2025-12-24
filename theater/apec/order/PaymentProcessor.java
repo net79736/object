@@ -31,7 +31,8 @@ public class PaymentProcessor {
      * @throws IllegalArgumentException 지원하지 않는 결제 수단인 경우
      */
     public void processPayment(Order order) {
-        PaymentTypeEnum paymentTypeEnum = order.getPaymentType();
+        // 결제 수단 타입 반환
+        PaymentTypeEnum paymentTypeEnum = order.paymentType(); 
         
         // 변하는 부분: 결제 수단 선택 (Factory에 위임)
         PaymentGateway paymentGateway = PaymentGatewayFactory.create(paymentTypeEnum);
@@ -40,6 +41,6 @@ public class PaymentProcessor {
         paymentGateway.requestPayment(order, order.getPaymentInfo(), order.getAmount());
         
         // 변하지 않는 부분: 주문 상태 업데이트
-        order.setPaymentStatus(OrderStatus.PAID);
+        order.updateOrderStatusWithPaymentDate(OrderStatus.PAID);
     }
 }

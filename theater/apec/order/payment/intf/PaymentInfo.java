@@ -1,5 +1,7 @@
 package apec.order.payment.intf;
 
+import apec.order.PaymentTypeEnum;
+
 /**
  * 결제에 필요한 정보를 나타내는 인터페이스
  * 각 결제 수단별로 필요한 정보가 다르므로, 결제 수단별로 구현체를 만듭니다.
@@ -12,7 +14,13 @@ package apec.order.payment.intf;
 public interface PaymentInfo {
     /**
      * 결제 수단 타입을 반환합니다.
-     * @return 결제 수단 타입
+     * @return 결제 수단 타입 (PaymentTypeEnum)
+     */
+    PaymentTypeEnum getPaymentType();
+    
+    /**
+     * 결제 수단 타입을 문자열로 반환합니다.
+     * @return 결제 수단 타입 문자열
      */
     String getPaymentMethod();
 }

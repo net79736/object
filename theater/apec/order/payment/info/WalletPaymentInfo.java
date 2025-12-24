@@ -19,6 +19,7 @@ public class WalletPaymentInfo implements PaymentInfo {
         return walletAddress;
     }
 
+    @Override
     public PaymentTypeEnum getPaymentType() {
         return paymentType;
     }

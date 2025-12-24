@@ -31,6 +31,7 @@ public class AccountPaymentInfo implements PaymentInfo {
         return accountHolderName;
     }
 
+    @Override
     public PaymentTypeEnum getPaymentType() {
         return paymentType;
     }

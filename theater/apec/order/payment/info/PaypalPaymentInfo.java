@@ -19,6 +19,7 @@ public class PaypalPaymentInfo implements PaymentInfo {
         return email;
     }
 
+    @Override
     public PaymentTypeEnum getPaymentType() {
         return paymentType;
     }
