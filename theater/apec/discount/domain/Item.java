@@ -1,4 +1,4 @@
-package apec.discount;
+package apec.discount.domain;
 
 public class Item {
     

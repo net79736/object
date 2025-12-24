@@ -1,6 +1,6 @@
-package apec.discount;
+package apec.discount.enums;
 
-public enum MembershipLevel {
+public enum MembershipLevelEnum {
     GOLD,
     SILVER,
     BRONZE;
@@ -12,6 +12,4 @@ public enum MembershipLevel {
             case BRONZE -> 0;
         };
     }
-
-    
 }

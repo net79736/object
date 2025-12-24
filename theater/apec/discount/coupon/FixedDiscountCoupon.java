@@ -1,5 +1,8 @@
 package apec.discount.coupon;
 
+import apec.discount.coupon.intf.CouponPolicy;
+import apec.discount.enums.CouponType;
+
 public class FixedDiscountCoupon implements CouponPolicy {
     private int amount;
     private final CouponType couponType = CouponType.FIXED;

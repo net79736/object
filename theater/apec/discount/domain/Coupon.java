@@ -1,4 +1,6 @@
-package apec.discount.coupon;
+package apec.discount.domain;
+
+import apec.discount.enums.CouponType;
 
 /**
  * 쿠폰 클래스

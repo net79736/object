@@ -1,12 +1,12 @@
 package apec.discount.discount;
 
-import apec.discount.MembershipLevel;
 import apec.discount.discount.intf.DiscountPolicy;
+import apec.discount.enums.MembershipLevelEnum;
 
 public class GradeDiscountPolicy implements DiscountPolicy {
-    private MembershipLevel membershipLevel;
+    private MembershipLevelEnum membershipLevel;
 
-    public GradeDiscountPolicy(MembershipLevel membershipLevel) {
+    public GradeDiscountPolicy(MembershipLevelEnum membershipLevel) {
         this.membershipLevel = membershipLevel;
     }
 

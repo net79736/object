@@ -1,5 +1,8 @@
 package apec.discount.coupon;
 
+import apec.discount.coupon.intf.CouponPolicy;
+import apec.discount.enums.CouponType;
+
 public class PercentDiscountCoupon implements CouponPolicy {
     private int discountRate;
     private final CouponType couponType = CouponType.PERCENT;

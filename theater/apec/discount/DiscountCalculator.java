@@ -7,6 +7,7 @@ import apec.discount.discount.CouponDiscountPolicy;
 import apec.discount.discount.FirstPurchaseDiscountPolicy;
 import apec.discount.discount.GradeDiscountPolicy;
 import apec.discount.discount.intf.DiscountPolicy;
+import apec.discount.domain.User;
 
 /**
  * 할인 계산기 클래스

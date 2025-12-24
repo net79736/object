@@ -1,6 +1,6 @@
 package test.claude6_3;
 
-import apec.discount.coupon.CouponType;
+import apec.discount.enums.CouponType;
 
 public class Coupon {
     private CouponType type; // 쿠폰 타입

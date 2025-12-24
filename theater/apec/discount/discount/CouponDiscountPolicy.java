@@ -1,7 +1,7 @@
 package apec.discount.discount;
 
-import apec.discount.coupon.Coupon;
 import apec.discount.discount.intf.DiscountPolicy;
+import apec.discount.domain.Coupon;
 
 /**
  * 쿠폰 할인 정책

@@ -1,6 +1,6 @@
-package apec.discount;
+package apec.discount.domain;
 
-import apec.discount.coupon.Coupon;
+import apec.discount.enums.MembershipLevelEnum;
 
 /**
  * 사용자 클래스
@@ -15,17 +15,17 @@ import apec.discount.coupon.Coupon;
  * 할인 계산 로직은 별도의 클래스에서 관리됩니다.
  */
 public class User {
-    private MembershipLevel membershipLevel;
+    private MembershipLevelEnum membershipLevel;
     private boolean isFirstPurchase;
     private Coupon coupon;
 
-    public User(MembershipLevel membershipLevel, boolean isFirstPurchase, Coupon coupon) {
+    public User(MembershipLevelEnum membershipLevel, boolean isFirstPurchase, Coupon coupon) {
         this.membershipLevel = membershipLevel;
         this.isFirstPurchase = isFirstPurchase;
         this.coupon = coupon;
     }
 
-    public MembershipLevel getMembershipLevel() {
+    public MembershipLevelEnum getMembershipLevel() {
         return membershipLevel;
     }
     

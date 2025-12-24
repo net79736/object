@@ -2,6 +2,9 @@ package apec.discount;
 
 import java.util.List;
 
+import apec.discount.domain.Item;
+import apec.discount.domain.User;
+
 /**
  * 장바구니 클래스
  * 장바구니에 담긴 상품들의 총 금액을 계산하고, 할인을 적용합니다.
