@@ -1,4 +1,4 @@
-package apec.notification.notification.intf;
+package apec.notification.sender.intf;
 
 import apec.notification.NotificationSettings;
 import apec.notification.User;
