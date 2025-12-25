@@ -9,6 +9,7 @@ import apec.payment_order_point.point.PointService;
  * 포인트 결제를 처리하는 핸들러
  * 
  * 사용자의 포인트를 차감하여 결제를 처리합니다.
+ * 할인 정책은 PaymentDiscountPolicy로 분리되어 있습니다.
  */
 public class PointPaymentHandler implements PaymentHandler {
     private final PointService pointService;
@@ -27,11 +28,6 @@ public class PointPaymentHandler implements PaymentHandler {
     @Override
     public PaymentType getPaymentType() {
         return PaymentType.POINT;
-    }
-    
-    @Override
-    public int getDiscountRate() {
-        return PaymentType.POINT.getDiscountRate();
     }
 }
 

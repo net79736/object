@@ -8,6 +8,9 @@ import apec.payment_order_point.main.PaymentType;
  * 
  * DIP 원칙에 따라 각 결제 수단별 구현체가 이 인터페이스를 구현합니다.
  * PaymentService는 구체적인 결제 처리 로직을 알 필요 없이 이 인터페이스를 통해 결제를 처리합니다.
+ * 
+ * 할인 정책은 PaymentDiscountPolicy로 분리되어 있어, 결제 처리 책임만 담당합니다.
+ * (SRP 원칙: 단일 책임 원칙)
  */
 public interface PaymentHandler {
     /**
@@ -27,12 +30,5 @@ public interface PaymentHandler {
      * @return 처리하는 결제 수단 타입
      */
     PaymentType getPaymentType();
-    
-    /**
-     * 이 결제 수단의 할인율을 반환합니다.
-     * 
-     * @return 할인율 (퍼센트)
-     */
-    int getDiscountRate();
 }
 

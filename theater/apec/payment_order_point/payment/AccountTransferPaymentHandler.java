@@ -8,6 +8,7 @@ import apec.payment_order_point.payment.intf.PaymentHandler;
  * 계좌이체 결제를 처리하는 핸들러
  * 
  * 실제 구현에서는 은행 API를 호출합니다.
+ * 할인 정책은 PaymentDiscountPolicy로 분리되어 있습니다.
  */
 public class AccountTransferPaymentHandler implements PaymentHandler {
     
@@ -21,11 +22,6 @@ public class AccountTransferPaymentHandler implements PaymentHandler {
     @Override
     public PaymentType getPaymentType() {
         return PaymentType.ACCOUNT_TRANSFER;
-    }
-    
-    @Override
-    public int getDiscountRate() {
-        return PaymentType.ACCOUNT_TRANSFER.getDiscountRate();
     }
 }
 

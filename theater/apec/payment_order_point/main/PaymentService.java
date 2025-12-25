@@ -1,9 +1,12 @@
 package apec.payment_order_point.main;
 
 import java.util.List;
-
+import java.util.Optional;
 import apec.payment_order_point.common.User;
+import apec.payment_order_point.main.PaymentPlan.PaymentItem;
 import apec.payment_order_point.order.Order;
+import apec.payment_order_point.payment.discount.PaymentDiscountPolicyRepository;
+import apec.payment_order_point.payment.discount.intf.PaymentDiscountPolicy;
 import apec.payment_order_point.payment.intf.PaymentHandler;
 
 /**
@@ -12,12 +15,17 @@ import apec.payment_order_point.payment.intf.PaymentHandler;
  * DIP 원칙에 따라 PaymentService는 구체적인 결제 처리 로직을 알 필요 없이,
  * PaymentHandler 인터페이스를 통해 결제를 처리합니다.
  * 각 결제 수단별 핸들러는 PaymentHandler 인터페이스를 구현하여 자신의 결제 로직을 처리합니다.
+ * 
+ * 할인 정책은 PaymentDiscountPolicyRepository를 통해 관리되며,
+ * 이벤트별로 다른 할인 정책을 적용할 수 있습니다.
  */
 public class PaymentService {
     private final List<PaymentHandler> paymentHandlers;
+    private final PaymentDiscountPolicyRepository discountPolicyRepository;
 
-    public PaymentService(List<PaymentHandler> paymentHandlers) {
+    public PaymentService(List<PaymentHandler> paymentHandlers, PaymentDiscountPolicyRepository discountPolicyRepository) {
         this.paymentHandlers = paymentHandlers;
+        this.discountPolicyRepository = discountPolicyRepository;
     }
 
     /**
@@ -47,7 +55,7 @@ public class PaymentService {
      */
     private void executePaymentPlan(User user, PaymentPlan paymentPlan) {
         // 결제 계획에 포함된 각 결제 항목을 순차적으로 처리합니다. (각 결제 항목은 하나의 결제 수단을 나타냄. [포인트, 카드, 계좌이체 등])
-        for (PaymentPlan.PaymentItem item : paymentPlan.getPaymentItems()) {
+        for (PaymentItem item : paymentPlan.getPaymentItems()) {
             PaymentHandler handler = findHandler(item.getPaymentType());
             handler.processPayment(user, item.getAmount());
         }
@@ -68,17 +76,44 @@ public class PaymentService {
     }
 
     /**
-     * 결제 수단별 할인율을 적용한 최종 결제 금액을 계산합니다.
+     * 결제 수단별 할인 정책을 적용한 최종 결제 금액을 계산합니다.
+     * 
+     * PaymentDiscountPolicyRepository에서 해당 결제 수단의 할인 정책을 조회하여 적용합니다.
+     * 할인 정책이 없으면 원래 금액을 반환합니다.
      * 
      * @param originalAmount 원래 금액
      * @param paymentType 결제 수단
      * @return 할인 적용 후 최종 결제 금액
      */
     public int calculateFinalAmount(int originalAmount, PaymentType paymentType) {
-        PaymentHandler handler = findHandler(paymentType);
-        int discountRate = handler.getDiscountRate();
-        int discountAmount = (originalAmount * discountRate) / 100;
-        return originalAmount - discountAmount;
+        // 결재 타입별 할인 정책 조회
+        Optional<PaymentDiscountPolicy> policy = discountPolicyRepository.findByPaymentType(paymentType);
+        
+        if (policy.isPresent()) {
+            // 할인 정책이 있으면 할인 적용 후 금액 반환
+            return policy.get().applyDiscount(originalAmount);
+        }
+        
+        // 할인 정책이 없으면 원래 금액 반환
+        return originalAmount;
+    }
+    
+    /**
+     * 결제 수단별 할인 금액을 계산합니다.
+     * 
+     * @param originalAmount 원래 금액
+     * @param paymentType 결제 수단
+     * @return 할인 금액
+     */
+    public int calculateDiscountAmount(int originalAmount, PaymentType paymentType) {
+        Optional<PaymentDiscountPolicy> policy = discountPolicyRepository.findByPaymentType(paymentType);
+        
+        if (policy.isPresent()) {
+            return policy.get().calculateDiscountAmount(originalAmount);
+        }
+        
+        // 할인 정책이 없으면 할인 금액 0 반환
+        return 0;
     }
 }
 

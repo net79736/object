@@ -1,11 +1,9 @@
 package apec.payment_order_point.order;
 
 import java.util.List;
-
 import apec.payment_order_point.common.User;
 import apec.payment_order_point.main.PaymentPlan;
 import apec.payment_order_point.main.PaymentType;
-import apec.payment_order_point.order.validator.PaymentTypeValidator;
 import apec.payment_order_point.order.validator.PointAmountValidator;
 import apec.payment_order_point.order.validator.PointBalanceValidator;
 import apec.payment_order_point.order.validator.intf.PaymentPlanValidator;
@@ -102,7 +100,7 @@ public class Order {
             int pointAmount = this.pointAmount;
             int remainingAmount = totalAmount - pointAmount;
 
-            // 검증자들을 통해 검증 수행
+            // 검증자들을 통해 검증 수행 (throw Exception 처리)
             validatePaymentPlan(pointAmount, totalAmount);
 
             return PaymentPlan.mixed(pointAmount, paymentType, remainingAmount);
@@ -138,8 +136,7 @@ public class Order {
         // 기본 검증자 목록 반환
         return List.of(
             new PointAmountValidator(),
-            new PointBalanceValidator(),
-            new PaymentTypeValidator()
+            new PointBalanceValidator()
         );
     }
 

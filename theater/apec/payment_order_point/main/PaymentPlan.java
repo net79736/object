@@ -11,7 +11,7 @@ import java.util.List;
  * 단일 결제도 하나의 PaymentItem으로 표현할 수 있습니다.
  */
 public class PaymentPlan {
-    private final List<PaymentItem> paymentItems;
+    private final List<PaymentItem> paymentItems; // 결제 항목 목록
 
     private PaymentPlan(List<PaymentItem> paymentItems) {
         this.paymentItems = Collections.unmodifiableList(new ArrayList<>(paymentItems));
@@ -59,8 +59,8 @@ public class PaymentPlan {
      * 결제 항목을 나타내는 값 객체
      */
     public static class PaymentItem {
-        private final PaymentType paymentType;
-        private final int amount;
+        private final PaymentType paymentType; // 결제 수단
+        private final int amount; // 결제 금액
 
         public PaymentItem(PaymentType paymentType, int amount) {
             this.paymentType = paymentType;
