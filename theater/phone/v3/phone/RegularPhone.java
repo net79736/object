@@ -1,25 +1,24 @@
-package phone.v2;
+package phone.v3.phone;
 
 import java.time.Duration;
 
 import common.Money;
+import phone.v3.common.Call;
+import phone.v3.common.Phone;
 
 public class RegularPhone extends Phone {
     private Money amount;
     private Duration seconds;
-    
-    public RegularPhone (Money amount, Duration seconds, double taxRate) {
-        super(taxRate);
+
+    public RegularPhone(Money amount, Duration seconds) {
+        super(amount, seconds);
         this.amount = amount;
         this.seconds = seconds;
     }
-    @Override
-    protected Money calculateCallFee (Call call) {
-        return calculateAmount(call, amount);
-    }
 
-    private Money calculateAmount(Call call, Money rate) {
-        return rate.times(calculateChargeUnits(call));
+    @Override
+    protected Money calculateCallFee(Call call) {
+        return amount.times(calculateChargeUnits(call));
     }
 
     /**
@@ -32,4 +31,6 @@ public class RegularPhone extends Phone {
         // 통화 시간 / 요금 부과 시간
         return (int) (call.getDuration().getSeconds() / seconds.getSeconds()); // 통화 시간 계산
     }
+
+   // 세금 처리가 필요하지 않아 따로 afterCalculated 메서드를 @Override 하지 않음
 }
