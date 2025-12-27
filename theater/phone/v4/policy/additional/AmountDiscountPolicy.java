@@ -7,8 +7,8 @@ import phone.v4.policy.additional.intf.AdditionalRatePolicy;
 public class AmountDiscountPolicy extends AdditionalRatePolicy {
     private Money discountAmount;
 
-    public AmountDiscountPolicy(Money discountAmount, RatePolicy next) {
-        super(next);
+    public AmountDiscountPolicy(Money discountAmount, RatePolicy basePolicy) {
+        super(basePolicy);
         this.discountAmount = discountAmount;
     }
     

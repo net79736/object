@@ -7,8 +7,8 @@ import phone.v4.policy.additional.intf.AdditionalRatePolicy;
 public class TaxablePolicy extends AdditionalRatePolicy  {
     private double taxRatio;
   
-    public TaxablePolicy(double taxRatio, RatePolicy next) {
-        super(next);
+    public TaxablePolicy(double taxRatio, RatePolicy basePolicy) {
+        super(basePolicy);
         this.taxRatio = taxRatio;
     }
 

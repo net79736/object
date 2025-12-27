@@ -1,7 +1,6 @@
 package phone.v3.policy;
 
 import java.time.Duration;
-
 import common.Money;
 import phone.v3.common.Call;
 
@@ -20,7 +19,7 @@ public class RegularPolicy extends BasicRatePolicy {
      */
     @Override
     protected Money caculateCallFee(Call call) {
-        int chargeUnits = calculateChargeUnits(call, seconds);
-        return calculateAmount(amount, chargeUnits);
+        int chargeUnits = calculateChargeUnits(call, seconds); // 통화 시간을 요금 부과 시간 단위로 나누어 몫을 반환
+        return calculateAmount(amount, chargeUnits); // 요금 부과 단위 수와 단위 시간당 요금을 곱하여 요금을 계산합니다.
     }
 }

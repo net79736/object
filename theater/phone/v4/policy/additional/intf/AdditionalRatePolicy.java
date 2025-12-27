@@ -5,15 +5,15 @@ import phone.v4.domain.Phone;
 import phone.v4.policy.RatePolicy;
 
 public abstract class AdditionalRatePolicy implements RatePolicy {
-    private RatePolicy next;
+    private RatePolicy basePolicy;
 
-    public AdditionalRatePolicy(RatePolicy next) {
-        this.next = next;
+    public AdditionalRatePolicy(RatePolicy basePolicy) {
+        this.basePolicy = basePolicy;
     }
 
     @Override
     public Money calculateFee(Phone phone) {
-        Money fee = next.calculateFee(phone);
+        Money fee = basePolicy.calculateFee(phone);
         return afterCalculated(fee);
     }
     
