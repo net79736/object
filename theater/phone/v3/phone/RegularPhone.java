@@ -1,10 +1,8 @@
 package phone.v3.phone;
 
 import java.time.Duration;
-
 import common.Money;
 import phone.v3.common.Call;
-import phone.v3.common.Phone;
 
 public class RegularPhone extends Phone {
     private Money amount;

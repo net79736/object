@@ -1,11 +1,10 @@
 package phone.v3.policy;
 
 import java.time.Duration;
-
 import common.Money;
 import phone.v3.common.Call;
-import phone.v3.common.Phone;
 import phone.v3.intf.RatePolicy;
+import phone.v3.phone.Phone;
 
 public abstract class BasicRatePolicy implements RatePolicy  {
     

@@ -1,10 +1,10 @@
-package phone.v3.common;
+package phone.v3.phone;
 
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
-
 import common.Money;
+import phone.v3.common.Call;
 
 public abstract class Phone {
     private Money amount; // 요금
