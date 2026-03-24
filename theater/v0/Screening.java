@@ -2,32 +2,32 @@ package v0;
 
 import java.time.LocalDateTime;
 
+import common.Money;
+
 public class Screening {
     private Movie movie; // 영화
     private int sequence; // 상영 순서
     private LocalDateTime whenScreened; // 상영 시작 시간
 
-    public Movie getMovie() {
-        return movie;
+    public Screening(Movie movie, int sequence, LocalDateTime whenScreened) {
+        this.movie = movie;
+        this.sequence = sequence;
+        this.whenScreened = whenScreened;
     }
 
-    public void setMovie(Movie movie) {
-        this.movie = movie;
+    public Movie getMovie() {
+        return movie;
     }
 
     public int getSequence() {
         return sequence;
     }
 
-    public void setSequence(int sequence) {
-        this.sequence = sequence;
-    }
-
     public LocalDateTime getWhenScreened() {
         return whenScreened;
     }
 
-    public void setWhenScreened(LocalDateTime whenScreened) {
-        this.whenScreened = whenScreened;
+    public Money calculateFee(int audienceCount) {
+        return this.movie.calculateMovieFee(this).times(audienceCount);
     }
 }

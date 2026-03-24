@@ -26,6 +26,13 @@ public class Money {
         return new Money(this.amount.subtract(amount.amount));
     }
 
+    /**
+     * 비율 할인 금액 계산
+     * 할인 비율에 따른 할인 금액 계산
+     * 
+     * @param percent 할인 비율 (예: 0.1 = 10%)
+     * @return 할인 금액 (예: 1000원)
+     */
     public Money times(double percent) {
         return new Money(this.amount.multiply(BigDecimal.valueOf(percent)));
     }

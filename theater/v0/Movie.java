@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 import common.Money;
+import v99.DiscountPolicy;
 
 public class Movie {
     private String title; // 영화 제목
@@ -15,6 +16,8 @@ public class Movie {
     private MovieType movieType; // 영화 할인 타입 (AMOUNT_DISCOUNT, PERCENT_DISCOUNT, NONE_DISCOUNT)
     private Money discountAmount; // 금액 할인
     private double discountPercent; // 비율 할인
+
+    private DiscountPolicy discountPolicy; // 할인 정책
 
     public MovieType getMovieType() {
         return movieType;
@@ -46,5 +49,9 @@ public class Movie {
     }
     public void setDiscountPercent (double discountPercent) {
         this.discountPercent = discountPercent;
+    }
+
+    public Money calculateMovieFee(Screening screening) {
+        return fee.minus(discountPolicy.calculateDiscountAmount(screening));
     }
 }
