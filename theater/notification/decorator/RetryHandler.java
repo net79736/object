@@ -24,13 +24,13 @@ public class RetryHandler implements NotificationChannel {
     }
     
     @Override
-    public void send(User user, String message) {
+    public void deliver(User user, String message) {
         int attempt = 0;
         Exception lastException = null;
         
         while (attempt < maxRetries) {
             try {
-                channel.send(user, message);
+                channel.deliver(user, message);
                 return; // 성공
             } catch (Exception e) {
                 lastException = e;

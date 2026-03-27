@@ -22,7 +22,7 @@ public interface NotificationChannel {
      * @param message 전송할 메시지
      * @throws RuntimeException 전송 실패 시
      */
-    void send(User user, String message);
+    void deliver(User user, String message);
     
     /**
      * 채널 이름을 반환합니다.

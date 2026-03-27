@@ -13,7 +13,7 @@ public class PushChannel implements NotificationChannel {
     private static final String CHANNEL_NAME = "PUSH";
     
     @Override
-    public void send(User user, String message) {
+    public void deliver(User user, String message) {
         String deviceToken = user.getDeviceToken();
         // 실제 구현에서는 푸시 알림 API 호출
         System.out.println("🔔 Push to " + deviceToken + ": " + message);

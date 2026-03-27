@@ -24,12 +24,12 @@ public class TimeoutHandler implements NotificationChannel {
     }
     
     @Override
-    public void send(User user, String message) {
+    public void deliver(User user, String message) {
         long startTime = System.currentTimeMillis();
         
         try {
             // 별도 스레드에서 전송 실행 (실제 구현에서는 CompletableFuture 등 사용)
-            channel.send(user, message);
+            channel.deliver(user, message);
             
             long duration = System.currentTimeMillis() - startTime;
             if (duration > timeoutMillis) {

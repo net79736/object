@@ -130,11 +130,11 @@ public class NotificationTest {
             );
             
             @Override
-            public void send(User user, String message) {
+            public void publish(User user, String message) {
                 NotificationSettings settings = user.getNotificationSettings();
                 channels.stream()
                     .filter(channel -> settings.isChannelEnabled(channel.getChannelName()))
-                    .forEach(channel -> channel.send(user, message));
+                    .forEach(channel -> channel.deliver(user, message));
             }
         };
     }
@@ -169,7 +169,7 @@ public class NotificationTest {
         
         // 실제로 전송해보기
         try {
-            timeoutChannel.send(user, "데코레이터 패턴 테스트 메시지");
+            timeoutChannel.deliver(user, "데코레이터 패턴 테스트 메시지");
         } catch (Exception e) {
             System.out.println("전송 중 오류 발생: " + e.getMessage());
         }

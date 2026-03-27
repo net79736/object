@@ -22,14 +22,14 @@ public class LoggingHandler implements NotificationChannel {
     }
     
     @Override
-    public void send(User user, String message) {
+    public void deliver(User user, String message) {
         String channelName = channel.getChannelName();
         long startTime = System.currentTimeMillis();
         
         try {
             System.out.println("[LOG] 알림 전송 시작 - 채널: " + channelName + ", 사용자: " + user.getEmail());
             
-            channel.send(user, message);
+            channel.deliver(user, message);
             
             long duration = System.currentTimeMillis() - startTime;
             System.out.println("[LOG] 알림 전송 완료 - 채널: " + channelName + ", 소요시간: " + duration + "ms");
@@ -45,4 +45,3 @@ public class LoggingHandler implements NotificationChannel {
         return channel.getChannelName();
     }
 }
-

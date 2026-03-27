@@ -25,4 +25,19 @@ public interface DeliveryFeePolicy {
      */
     int calculateFee(int baseFee);
 }
+/**
+public class DefaultNotification implements Notification {
+    private final List<NotificationChannel> channels;
 
+    public DefaultNotification(List<NotificationChannel> channels) {
+        this.channels = channels;
+    }
+
+    @Override
+    public void send(User user, String message) {
+        for (NotificationChannel channel : channels) {
+            channel.send(user, message);
+        }
+    }
+}
+ */

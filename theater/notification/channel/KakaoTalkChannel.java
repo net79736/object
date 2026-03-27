@@ -18,7 +18,7 @@ public class KakaoTalkChannel implements NotificationChannel {
     private static final String CHANNEL_NAME = "KAKAOTALK";
     
     @Override
-    public void send(User user, String message) {
+    public void deliver(User user, String message) {
         String userId = user.getEmail(); // 실제로는 카카오톡 사용자 ID 사용
         // 실제 구현에서는 카카오톡 알림톡 API 호출
         System.out.println("💬 KakaoTalk to " + userId + ": " + message);

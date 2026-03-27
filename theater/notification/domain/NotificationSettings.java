@@ -12,51 +12,24 @@ import java.util.Set;
  * - 런타임에 설정 변경 가능
  */
 public class NotificationSettings {
-    private Set<String> blockedChannels; // 차단된 채널 목록
+    private Set<String> enabledChannels; // 활성화된 채널 목록
     
     public NotificationSettings() {
-        this.blockedChannels = new HashSet<>();
+        this.enabledChannels = new HashSet<>();
     }
     
-    public NotificationSettings(Set<String> blockedChannels) {
-        this.blockedChannels = blockedChannels != null ? new HashSet<>(blockedChannels) : new HashSet<>();
+    public NotificationSettings(Set<String> enabledChannels) {
+        this.enabledChannels = enabledChannels != null ? new HashSet<>(enabledChannels) : new HashSet<>();
     }
     
     /**
      * 특정 채널이 활성화되어 있는지 확인합니다.
      * 
      * @param channelName 채널 이름 (EMAIL, SMS, PUSH 등)
-     * @return 차단되지 않았으면 true, 차단되었으면 false
+     * @return 활성화되어 있으면 true, 활성화되어 있지 않으면 false
      */
     public boolean isChannelEnabled(String channelName) {
-        return !blockedChannels.contains(channelName);
-    }
-    
-    /**
-     * 채널을 차단합니다.
-     * 
-     * @param channelName 차단할 채널 이름
-     */
-    public void blockChannel(String channelName) {
-        blockedChannels.add(channelName);
-    }
-    
-    /**
-     * 채널 차단을 해제합니다.
-     * 
-     * @param channelName 차단 해제할 채널 이름
-     */
-    public void unblockChannel(String channelName) {
-        blockedChannels.remove(channelName);
-    }
-    
-    /**
-     * 모든 채널이 차단되었는지 확인합니다.
-     * 
-     * @return 모든 채널이 차단되었으면 true
-     */
-    public boolean areAllChannelsBlocked() {
-        return blockedChannels.size() >= 3; // EMAIL, SMS, PUSH 모두 차단
+        return enabledChannels.contains(channelName);
     }
 }
 

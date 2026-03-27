@@ -13,7 +13,7 @@ public class EmailChannel implements NotificationChannel {
     private static final String CHANNEL_NAME = "EMAIL";
     
     @Override
-    public void send(User user, String message) {
+    public void deliver(User user, String message) {
         String email = user.getEmail();
         // 실제 구현에서는 이메일 전송 API 호출
         System.out.println("📧 Email to " + email + ": " + message);
@@ -24,4 +24,3 @@ public class EmailChannel implements NotificationChannel {
         return CHANNEL_NAME;
     }
 }
-

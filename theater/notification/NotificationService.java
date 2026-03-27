@@ -24,6 +24,6 @@ public class NotificationService {
      * @param message 전송할 메시지
      */
     public void sendNotification(Notification notification, User user, String message) {
-        notification.send(user, message);
+        notification.publish(user, message);
     }
 }

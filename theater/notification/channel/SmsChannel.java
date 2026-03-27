@@ -13,7 +13,7 @@ public class SmsChannel implements NotificationChannel {
     private static final String CHANNEL_NAME = "SMS";
     
     @Override
-    public void send(User user, String message) {
+    public void deliver(User user, String message) {
         String phone = user.getPhone();
         // 실제 구현에서는 SMS 전송 API 호출
         System.out.println("📱 SMS to " + phone + ": " + message);
