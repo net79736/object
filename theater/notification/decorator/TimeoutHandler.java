@@ -1,6 +1,6 @@
-package notification.feature.timeout;
+package notification.decorator;
 
-import notification.channel.intf.NotificationChannel;
+import notification.core.NotificationChannel;
 import notification.domain.User;
 
 /**

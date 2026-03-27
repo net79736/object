@@ -1,5 +1,8 @@
-package notification.notification.intf;
+package notification.core;
 
+import java.util.List;
+
+import notification.channel.Channels;
 import notification.domain.User;
 
 /**
@@ -24,5 +27,30 @@ public interface Notification {
      * @param message 전송할 메시지
      */
     void send(User user, String message);
+
+    // 1. ImportantNotification.java 내용이 이리로 옵니다.
+    static Notification important() {
+        return new DefaultNotification(List.of(
+            Channels.email(), 
+            Channels.sms()
+        ));
+    }
+
+    // 2. MarketingNotification.java 내용이 이리로 옵니다.
+    static Notification marketing() {
+        return new DefaultNotification(List.of(
+            Channels.push(), 
+            Channels.email()
+        ));
+    }
+
+    // 3. UrgentNotification.java 내용이 이리로 옵니다.
+    static Notification urgent() {
+        return new DefaultNotification(List.of(
+            Channels.email().withLogging(),
+            Channels.sms().withRetry(3),
+            Channels.push()
+        ));
+    }
 }
 
