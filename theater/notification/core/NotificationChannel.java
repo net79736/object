@@ -1,5 +1,8 @@
-package notification.channel.intf;
+package notification.core;
 
+import notification.decorator.LoggingHandler;
+import notification.decorator.RetryHandler;
+import notification.decorator.TimeoutHandler;
 import notification.domain.User;
 
 /**
@@ -28,5 +31,18 @@ public interface NotificationChannel {
      * @return 채널 이름 (예: "EMAIL", "SMS", "PUSH")
      */
     String getChannelName();
+
+    // 기능을 추가하는 '직관적인' 기본 메서드들
+    default NotificationChannel withLogging() {
+        return new LoggingHandler(this);
+    }
+
+    default NotificationChannel withRetry(int maxRetries) {
+        return new RetryHandler(this, maxRetries);
+    }
+
+    default NotificationChannel withTimeout(long millis) {
+        return new TimeoutHandler(this, millis);
+    }
 }
 

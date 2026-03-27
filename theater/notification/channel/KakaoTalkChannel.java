@@ -1,6 +1,6 @@
 package notification.channel;
 
-import notification.channel.intf.NotificationChannel;
+import notification.core.NotificationChannel;
 import notification.domain.User;
 
 /**

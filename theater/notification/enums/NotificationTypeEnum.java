@@ -13,4 +13,3 @@ public enum NotificationTypeEnum {
     MARKETING,  // 마케팅 알림 (Push + 이메일)
     URGENT      // 긴급 알림 (모든 채널)
 }
-

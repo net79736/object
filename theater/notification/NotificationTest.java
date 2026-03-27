@@ -4,18 +4,17 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
 import notification.channel.EmailChannel;
 import notification.channel.PushChannel;
 import notification.channel.SmsChannel;
-import notification.channel.intf.NotificationChannel;
+import notification.core.Notification;
+import notification.core.NotificationChannel;
+import notification.decorator.LoggingHandler;
+import notification.decorator.RetryHandler;
+import notification.decorator.TimeoutHandler;
 import notification.domain.NotificationSettings;
 import notification.domain.User;
-import notification.feature.logging.LoggingHandler;
-import notification.feature.retry.RetryHandler;
-import notification.feature.timeout.TimeoutHandler;
-import notification.notification.ImportantNotification;
-import notification.notification.MarketingNotification;
-import notification.notification.intf.Notification;
 
 /**
  * 알림 시스템 테스트 클래스
@@ -49,7 +48,7 @@ public class NotificationTest {
         User user = createUser("user1@example.com", "010-1234-5678", "device-token-123", new NotificationSettings());
         
         // 중요 알림 생성 (이메일 + SMS 조합)
-        Notification notification = new ImportantNotification();
+        Notification notification = Notification.important();
         
         // 알림 전송
         NotificationService service = new NotificationService();
@@ -71,7 +70,7 @@ public class NotificationTest {
         User user = createUser("user2@example.com", "010-9876-5432", "device-token-456", settings);
         
         // 마케팅 알림 생성 (Push + 이메일 조합)
-        Notification notification = new MarketingNotification();
+        Notification notification = Notification.marketing();
         
         // 알림 전송 (SMS는 차단되어 Push와 이메일만 전송됨)
         NotificationService service = new NotificationService();

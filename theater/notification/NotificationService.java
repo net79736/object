@@ -1,7 +1,7 @@
 package notification;
 
+import notification.core.Notification;
 import notification.domain.User;
-import notification.notification.intf.Notification;
 
 /**
  * 알림 서비스 클래스
