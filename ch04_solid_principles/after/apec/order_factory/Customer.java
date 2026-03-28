@@ -1,0 +1,25 @@
+package ch04_solid_principles.after.apec.order_factory;
+
+public class Customer {
+    private Long id;
+    private String name;
+    private CustomerGradeEnum grade;
+
+    public Customer(Long id, String name, CustomerGradeEnum grade) {
+        this.id = id;
+        this.name = name;
+        this.grade = grade;
+    }
+    
+    public Long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public CustomerGradeEnum getGrade() {
+        return grade;
+    }
+}

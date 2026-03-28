@@ -1,0 +1,24 @@
+package ch08_shopping_system.after.apec.payment_order_point.payment;
+
+import ch08_shopping_system.after.apec.payment_order_point.common.User;import ch08_shopping_system.after.apec.payment_order_point.main.PaymentType;import ch08_shopping_system.after.apec.payment_order_point.payment.intf.PaymentHandler;
+/**
+ * 계좌이체 결제를 처리하는 핸들러
+ * 
+ * 실제 구현에서는 은행 API를 호출합니다.
+ * 할인 정책은 PaymentDiscountPolicy로 분리되어 있습니다.
+ */
+public class AccountTransferPaymentHandler implements PaymentHandler {
+    
+    @Override
+    public void processPayment(User user, int amount) {
+        // 실제 구현에서는 은행 API 호출
+        // 여기서는 시뮬레이션만 수행
+        System.out.println("계좌이체 결제 처리: " + amount + "원");
+    }
+    
+    @Override
+    public PaymentType getPaymentType() {
+        return PaymentType.ACCOUNT_TRANSFER;
+    }
+}
+
